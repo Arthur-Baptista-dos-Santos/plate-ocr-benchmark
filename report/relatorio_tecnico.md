@@ -234,13 +234,28 @@ lista curta como se faz com fabricante/modelo).
 
 ### 6.1 Onde cada abordagem erra
 
-- **Tesseract e EasyOCR (OCR clássico → regex/fuzzy):** o erro dominante, especialmente nos
-  níveis médio/difícil, é de **segmentação de caractere**, não de "não achou o texto". A
-  inspeção de `error_analysis.csv` mostra o padrão típico da Sprint 2 se repetindo: campos com
-  separador fixo (`tensao`, `corrente`, formato `X/Y unidade`) e prefixo fixo (`grau_ip`,
-  `IPxx`) são os que mais caem, porque o parser é regex e um único caractere trocado nesse
-  separador/prefixo já invalida o campo inteiro — mesmo que o resto do texto tenha sido lido
-  corretamente. Isso é uma limitação do **parsing por regex**, não necessariamente do OCR em si.
+> **Correção em relação a uma hipótese inicial:** a primeira versão desta seção afirmava que o
+> erro dominante do Tesseract/EasyOCR era "segmentação de caractere" num separador/prefixo,
+> como limitação do parser regex. Ao investigar concretamente (contagem de predições vazias vs.
+> predições erradas-mas-não-vazias em `results_detalhado.csv`), essa hipótese **não se
+> sustentou**: nos casos de erro do Tesseract, **89% a 100% das predições por campo são vazias**
+> (o regex não encontrou nada para casar), não um valor errado por 1 caractere. Ou seja, o
+> gargalo real não é o parser — é que, sob degradação média/difícil, o **texto bruto devolvido
+> pelo OCR já não contém informação recuperável**. Exemplo real de `results/raw/tesseract.json`
+> (`medium_01`, ground truth `corrente = 45.2/26.1 A`): o Tesseract devolveu o trecho
+> `"45226414"` — os dígitos aparecem, mas o ponto decimal e a barra separadora desapareceram
+> por completo, tornando o valor irrecuperável por regex sem arriscar falsos positivos. Em
+> `hard_00`, o texto bruto inteiro devolvido pelo Tesseract foi `"pO"`.
+
+- **Tentativa de melhoria do parsing** (a pedido, após a primeira rodada): `src/methods/parsing.py`
+  foi ajustado para tolerar ruído comum de OCR — separador `/` frequentemente lido como `|` ou
+  traço, abreviações de 2 letras (`kW`, `Hz`, `IP`) às vezes com espaço entre as letras. O
+  benchmark foi re-executado (Tesseract e EasyOCR; a abordagem multimodal não usa este parser).
+  **Resultado: acurácia idêntica, campo a campo, antes e depois** (Tesseract 45,7%/45,9%,
+  EasyOCR 24,0%/26,3% — sem nenhuma mudança). Isso **confirma empiricamente** a correção acima:
+  como a esmagadora maioria dos erros vem de texto bruto sem informação recuperável, tornar o
+  regex mais tolerante não tem efeito — o gargalo está upstream, na extração OCR sob degradação,
+  não no parsing. Deixado registrado como resultado negativo válido, não removido do relatório.
 - **EasyOCR ficou sistematicamente abaixo do Tesseract** em todos os níveis de dificuldade e em
   9 dos 10 campos — inverso do que a Sprint 2 sugeria (EasyOCR era a única abordagem testada
   lá). Duas explicações plausíveis, não excludentes: (1) o pré-processamento usado para EasyOCR
@@ -268,7 +283,7 @@ lista curta como se faz com fabricante/modelo).
 | Acurácia (médio/difícil) | Degrada abruptamente (≤40%, chegando a 0%) | Degrada, mas continua muito acima (100%→34%) |
 | Arquitetura | 2 etapas (OCR + regex/fuzzy) — erro pode vir de qualquer uma | 1 etapa (leitura e extração estruturada juntas) — mais robusto a variações de layout, mas "caixa-preta" |
 | Execução | Local, offline, sem custo marginal por imagem | Depende de um modelo com visão (API paga ou execução manual em sessão); nesta rodada não medimos custo/latência de API real |
-| Erros típicos | Campo com separador/prefixo fixo lido errado por 1 caractere | Campo não lido (vazio) em condições extremas, em vez de valor incorreto |
+| Erros típicos | Campo vazio (regex não encontra nada em texto OCR já degradado — não é erro de 1 caractere, ver seção 6.1) | Campo não lido (vazio) em condições extremas, em vez de valor incorreto |
 
 **Conclusão desta Sprint:** para este dataset e este layout de placa, a leitura multimodal
 supera claramente os dois OCRs clássicos testados, principalmente porque não depende de um
@@ -296,6 +311,7 @@ abaixo de um limiar de confiança).
 | Sem retomada da detecção (YOLO) nesta Sprint | Resultado mede leitura sobre placa já recortada, não o pipeline ponta-a-ponta | Retreinar/persistir pesos do detector e reintegrar antes da próxima Sprint |
 | Dataset ainda sintético (nenhuma placa real fotografada) | Degradações são aproximações de condições de campo, não capturam todas as variáveis reais (reflexo especular real, perspectiva de câmera de celular, JPEG real) | Capturar um lote piloto de fotos reais (mesmo que de placas não industriais similares) para validar se a ordem relativa das 3 abordagens se mantém |
 | Parsing por regex/fuzzy (Abordagens A/B) é específico do layout gerado | Não generaliza a outros fabricantes/layouts fora do vocabulário conhecido | Extração mais robusta (NER treinado ou regras mais genéricas) |
+| OCR clássico perde informação irrecuperável sob degradação média/difícil (confirmado na seção 6.1 — tolerância maior de regex não mudou a acurácia) | Tesseract/EasyOCR têm teto real baixo nessas condições, não é problema de parsing | Investir em pré-processamento mais agressivo (super-resolução, correção de perspectiva antes do OCR) em vez de regex |
 | Modelo multimodal testado com 1 prompt único, sem ajuste fino | Resultado reflete um único ponto de operação do prompt, não o teto de desempenho do modelo | Testar variações de prompt e comparar `gpt-4o` (maior) vs `gpt-4o-mini` |
 | Custo de API não mensurado nesta Sprint | Decisão de produção precisa do trade-off acurácia × custo × latência em escala | Medir custo por imagem e projetar para volume real de ativos da planta |
 

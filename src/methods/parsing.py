@@ -14,14 +14,26 @@ from rapidfuzz import fuzz
 
 from src.dataset_gen import FABRICANTES, MODELOS
 
-_RE_NUM_SERIE = re.compile(r"SN[\s\-]?(\d{4})[\s\-]?(\d{4,6})", re.IGNORECASE)
-_RE_COD_EQUIP = re.compile(r"EQ[\s\-]?(\d{4})[\s\-]?(\d{3,4})", re.IGNORECASE)
-_RE_TENSAO = re.compile(r"(\d{2,3})\s*[/\\]\s*(\d{3,4})\s*V", re.IGNORECASE)
-_RE_CORRENTE = re.compile(r"(\d{1,3}[.,]\d{1,2})\s*[/\\]\s*(\d{1,3}[.,]\d{1,2})\s*A", re.IGNORECASE)
-_RE_POTENCIA = re.compile(r"(\d+[.,]?\d*)\s*kW", re.IGNORECASE)
-_RE_FREQUENCIA = re.compile(r"\b(50|60)\s*Hz\b", re.IGNORECASE)
-_RE_GRAU_IP = re.compile(r"IP\s*[\.\s]?(\d{2})", re.IGNORECASE)
-_RE_DATA_FAB = re.compile(r"\b(0?[1-9]|1[0-2])\s*[/\\]\s*(20\d{2})\b")
+# Tolerância a ruído de OCR documentada por evidência real (não ajustada ao
+# gabarito do teste): inspecionando texto_bruto de casos de erro em
+# results/raw/tesseract.json, a barra "/" é frequentemente lida como "|",
+# "l" ou traço; abreviações de 2 letras ("kW", "Hz", "IP") às vezes saem com
+# espaço entre as letras. Ver seção 6.1 do relatório para a análise completa
+# — a maioria dos erros continua sendo texto irrecuperável (campo vazio), não
+# separador mal lido, então este tuning tem impacto esperado modesto.
+_SEP = r"[/\\|]"  # separador tolerante a "/", "\" e "|" (confusão comum de OCR)
+_TRACO = r"[\s\-–—]?"  # hífen/travessão/espaço, tolerante a variantes de traço
+
+_RE_NUM_SERIE = re.compile(rf"SN{_TRACO}(\d{{4}}){_TRACO}(\d{{4,6}})", re.IGNORECASE)
+_RE_COD_EQUIP = re.compile(rf"EQ{_TRACO}(\d{{4}}){_TRACO}(\d{{3,4}})", re.IGNORECASE)
+_RE_TENSAO = re.compile(rf"(\d{{2,3}})\s*{_SEP}\s*(\d{{3,4}})\s*V", re.IGNORECASE)
+_RE_CORRENTE = re.compile(
+    rf"(\d{{1,3}}[.,]\d{{1,2}})\s*{_SEP}\s*(\d{{1,3}}[.,]\d{{1,2}})\s*A", re.IGNORECASE
+)
+_RE_POTENCIA = re.compile(r"(\d+[.,]?\d*)\s*k\s?W", re.IGNORECASE)
+_RE_FREQUENCIA = re.compile(r"\b(50|60)\s*H\s?z\b", re.IGNORECASE)
+_RE_GRAU_IP = re.compile(r"[I1l]\s?P\s*[\.\s]?(\d{2})", re.IGNORECASE)
+_RE_DATA_FAB = re.compile(rf"\b(0?[1-9]|1[0-2])\s*{_SEP}\s*(20\d{{2}})\b")
 
 LIMIAR_FUZZY_VOCABULARIO = 70
 

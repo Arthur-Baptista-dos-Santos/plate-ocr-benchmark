@@ -307,11 +307,23 @@ def build() -> None:
     story.append(PageBreak())
     story.append(h1("6. Análise de erros e limitações"))
     story.append(h2("6.1 Onde cada abordagem erra"))
+    story.append(note(
+        "<b>Correção em relação a uma hipótese inicial:</b> a primeira versão desta análise "
+        "supôs que o erro dominante do Tesseract/EasyOCR era \"segmentação de caractere\" num "
+        "separador/prefixo (limitação do parser). Investigando results_detalhado.csv, isso não "
+        "se sustentou: 89% a 100% das predições erradas por campo são <b>vazias</b> (o regex "
+        "não achou nada), não um valor errado por 1 caractere. Exemplo real "
+        "(medium_01, corrente esperada 45.2/26.1 A): o Tesseract devolveu \"45226414\" — os "
+        "dígitos aparecem, mas ponto decimal e barra desapareceram por completo. Em hard_00, o "
+        "texto bruto inteiro devolvido foi \"pO\"."
+    ))
     story.append(bullets([
-        "<b>Tesseract/EasyOCR:</b> erro dominante é segmentação de caractere em campos com "
-        "separador/prefixo fixo (tensão, corrente, grau_ip) — um caractere errado nesse ponto "
-        "invalida o campo inteiro, mesmo com o resto lido corretamente. Limitação do "
-        "<b>parsing por regex</b>, não necessariamente do OCR em si.",
+        "<b>Tentativa de melhoria do parsing</b> (a pedido, após a 1ª rodada): parsing.py foi "
+        "ajustado para tolerar ruído comum de OCR (separador / lido como | ou traço, "
+        "abreviações kW/Hz/IP com espaço entre letras). Benchmark re-executado — "
+        "<b>resultado: acurácia idêntica antes e depois</b> (Tesseract 45,7%, EasyOCR 24,0%, "
+        "sem nenhuma mudança). Confirma empiricamente que o gargalo está na extração OCR sob "
+        "degradação, não no parsing — resultado negativo registrado como achado válido.",
         "<b>EasyOCR ficou sistematicamente abaixo do Tesseract</b> em quase todos os campos — "
         "inverso do sugerido pela Sprint 2 (que só testou EasyOCR, N=3). A conclusão anterior "
         "não se sustentou sob um teste maior e mais adverso.",
@@ -327,7 +339,7 @@ def build() -> None:
          ["Acurácia (médio/difícil)", "Degrada abruptamente (≤40%, chega a 0%)", "Degrada, mas fica acima (100%→34%)"],
          ["Arquitetura", "2 etapas (OCR + regex) — erro pode vir de qualquer uma", "1 etapa — mais robusto, mas caixa-preta"],
          ["Execução", "Local, offline, sem custo marginal", "Depende de modelo com visão (API paga ou sessão)"],
-         ["Erros típicos", "Campo errado por 1 caractere", "Campo vazio em condição extrema"]],
+         ["Erros típicos", "Campo vazio (texto OCR já degradado, não erro de 1 caractere)", "Campo vazio em condição extrema"]],
         col_widths=[3.7 * cm, 6 * cm, 6 * cm], font_size=7.5,
     ))
     story.append(Spacer(1, 6))
@@ -344,6 +356,7 @@ def build() -> None:
         [["Sem retomada da detecção (YOLO)", "Mede leitura, não pipeline ponta-a-ponta", "Retreinar/persistir pesos do detector"],
          ["Dataset ainda sintético", "Degradações são aproximações de campo", "Piloto com fotos reais"],
          ["Parsing regex/fuzzy específico do layout", "Não generaliza a outros fabricantes", "NER treinado ou regras mais genéricas"],
+         ["OCR perde informação sob degradação (confirmado: tolerância de regex não mudou nada)", "Teto real baixo do OCR clássico em condição adversa", "Investir em pré-processamento (super-resolução, correção de perspectiva)"],
          ["Multimodal com 1 prompt único", "Não reflete o teto de desempenho do modelo", "Testar variações de prompt e gpt-4o vs. mini"],
          ["Custo de API não mensurado", "Falta trade-off acurácia×custo×latência", "Medir custo por imagem em escala"]],
         col_widths=[4.3 * cm, 5.7 * cm, 5.7 * cm], font_size=7.3,

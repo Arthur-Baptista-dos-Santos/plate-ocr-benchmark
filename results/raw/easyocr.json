@@ -2,7 +2,7 @@
   {
     "image_id": "easy_00",
     "metodo": "easyocr",
-    "tempo_ms": 13401.2,
+    "tempo_ms": 15240.6,
     "texto_bruto": "WE(; Eqquipauuento~ MODELO N SERE IE3 200L SN 2020 42098 TENSAO CORRENTE 380/660 V 45 2/261 ^ POIENCIA FREQUENCIA 11 kW 50 Hz GRAUIP FAB IP4A 02/2020 COD EQ EQ 2020 7912",
     "campos": {
       "num_serie": "SN-2020-42098",
@@ -19,7 +19,7 @@
   {
     "image_id": "easy_01",
     "metodo": "easyocr",
-    "tempo_ms": 825.0,
+    "tempo_ms": 3860.5,
     "texto_bruto": "Paikel Halitin MoDELO N SERE AIIVAR 31 SN 2019 95181 TENSAO CORRENTE 208360 V 68.039 3 ^ POIENCIA FREQUENCIA 22 kW 60 Hz GRAUIP FAB IPAA 01/2019 COD EQ EQ 2019 5557",
     "campos": {
       "num_serie": "SN-2019-95181",
@@ -35,7 +35,7 @@
   {
     "image_id": "easy_02",
     "metodo": "easyocr",
-    "tempo_ms": 951.0,
+    "tempo_ms": 1179.3,
     "texto_bruto": "ABB Lrla MODELO N SERE MZBAX 132 SN 2013 59797 TENSAO CORRENTE 220/380 V 12 87.4 A POIENCIA FREQUENCIA kW 60 Hz GRAUIP FAB IPSA 08/2013 COD EQ EQ 2013 8527",
     "campos": {
       "num_serie": "SN-2013-59797",
@@ -51,7 +51,7 @@
   {
     "image_id": "easy_03",
     "metodo": "easyocr",
-    "tempo_ms": 784.1,
+    "tempo_ms": 1172.6,
     "texto_bruto": "ABB Lrla MODELO N SERE W22 16OM SN 2013 96673 TENSAO CORRENTE 380/660 V 12 87.4 A POIENCIA FREQUENCIA 11 kW 50 Hz GRAUIP FAB IPSA 12/2013 COD EQ EQ 7013 7227",
     "campos": {
       "num_serie": "SN-2013-96673",
@@ -68,7 +68,7 @@
   {
     "image_id": "easy_04",
     "metodo": "easyocr",
-    "tempo_ms": 704.2,
+    "tempo_ms": 1165.8,
     "texto_bruto": "Wer Mlotoe- MODELO N SERE MZBAX 132 SN 2013 89840 TENSAO CORRENTE 380/660 V 9 2/5 3 A POIENCIA FREQUENCIA 22 kW 50 Hz GRAUIP FAB IP66 11/2013 COD EQ EQ 2013 7216",
     "campos": {
       "num_serie": "SN-2013-89840",
@@ -86,7 +86,7 @@
   {
     "image_id": "easy_05",
     "metodo": "easyocr",
-    "tempo_ms": 728.5,
+    "tempo_ms": 1172.4,
     "texto_bruto": "KatnIto)  MODELO N SERE IE3 200L SN 2022-18675 TENSAO CORRENTE 380/660 V 9 2/5 3 A POIENCIA FREQUENCIA kW 50 Hz GRAUIP FAB IP6 08/2022 COD EQ EQ 2022 7482",
     "campos": {
       "num_serie": "SN-2022-18675",
@@ -102,7 +102,7 @@
   {
     "image_id": "easy_06",
     "metodo": "easyocr",
-    "tempo_ms": 719.8,
+    "tempo_ms": 1188.6,
     "texto_bruto": "Bo-ch Rexioth MODELO N SERE CM1O 3 SN 2018 86184 TENSAO CORRENTE 127/220 V 12 87.4 A POIENCIA FREQUENCIA 22 kW 50 Hz GRAUIP FAB IP4A 05/2018 COD EQ EQ 2018 9085",
     "campos": {
       "num_serie": "SN-2018-86184",
@@ -119,7 +119,7 @@
   {
     "image_id": "easy_07",
     "metodo": "easyocr",
-    "tempo_ms": 737.0,
+    "tempo_ms": 1193.1,
     "texto_bruto": "(atcIto)s MoDELO N SERE CM1O 3 SN 2019 88104 TENSAO CORRENTE 127/220 V 9 2/53 A POIENCIA FREQUENCIA 37 kW 5O Hz GRAUIP FAB IPSA 02/2019 COD EQ EQ 2019 9797",
     "campos": {
       "num_serie": "SN-2019-88104",
@@ -135,7 +135,7 @@
   {
     "image_id": "easy_08",
     "metodo": "easyocr",
-    "tempo_ms": 740.5,
+    "tempo_ms": 1178.3,
     "texto_bruto": "Wer Mlotoe- MODELO N SERE VPL-BO7S2F SN 2017-33416 TENSAO CORRENTE 208360 V 28 4/16 4 ^ POIENCIA FREQUENCIA 37 kW 50 Hz GRAUIP FAB IPSS 01/2017 COD EQ EQ 2017-7126",
     "campos": {
       "num_serie": "SN-2017-33416",
@@ -151,7 +151,7 @@
   {
     "image_id": "easy_09",
     "metodo": "easyocr",
-    "tempo_ms": 772.0,
+    "tempo_ms": 1194.9,
     "texto_bruto": "Wer Mlotoe- MODELO N SERE AIIVAR 31 SN 2024-17592 TENSAO CORRENTE 380/660 V 9 2/5 3 A POIENCIA FREQUENCIA 11 kW 50 Hz GRAUIP FAB IP66 08/2024 COD EQ EQ 2024 2133",
     "campos": {
       "num_serie": "SN-2024-17592",
@@ -169,7 +169,7 @@
   {
     "image_id": "medium_00",
     "metodo": "easyocr",
-    "tempo_ms": 423.0,
+    "tempo_ms": 644.0,
     "texto_bruto": "Grunclos",
     "campos": {
       "fabricante": "Grundfos",
@@ -180,7 +180,7 @@
   {
     "image_id": "medium_01",
     "metodo": "easyocr",
-    "tempo_ms": 425.0,
+    "tempo_ms": 675.7,
     "texto_bruto": "1i",
     "campos": {
       "fabricante": "",
@@ -191,7 +191,7 @@
   {
     "image_id": "medium_02",
     "metodo": "easyocr",
-    "tempo_ms": 712.1,
+    "tempo_ms": 1150.2,
     "texto_bruto": "co coo H SERE NINAR 31 SN 2022 27263 CORAML 20380y 68 0293a oIEYOK FQUENC 6aLy Crauia 0850n2 coD tQ EQ 2022-8851",
     "campos": {
       "num_serie": "SN-2022-27263",
@@ -204,7 +204,7 @@
   {
     "image_id": "medium_03",
     "metodo": "easyocr",
-    "tempo_ms": 475.3,
+    "tempo_ms": 725.8,
     "texto_bruto": "A C{ Hencfn F",
     "campos": {
       "fabricante": "",
@@ -215,7 +215,7 @@
   {
     "image_id": "medium_04",
     "metodo": "easyocr",
-    "tempo_ms": 857.1,
+    "tempo_ms": 1670.1,
     "texto_bruto": "Danfoss Brasil Vonclo Nsere ALVAR 31 SN-2016-62565 TeNSAO CoRReME 2080V 45 2/26 1 A POJENCA FREQUENCIA 2 2kW SOHz Rau FAB 1266 082016 contQ E02016-5345",
     "campos": {
       "num_serie": "SN-2016-62565",
@@ -228,7 +228,7 @@
   {
     "image_id": "medium_05",
     "metodo": "easyocr",
-    "tempo_ms": 416.2,
+    "tempo_ms": 4206.2,
     "texto_bruto": "",
     "campos": {
       "fabricante": "",
@@ -239,7 +239,7 @@
   {
     "image_id": "medium_06",
     "metodo": "easyocr",
-    "tempo_ms": 525.7,
+    "tempo_ms": 785.0,
     "texto_bruto": "l   'Cic Annt 54",
     "campos": {
       "fabricante": "",
@@ -250,7 +250,7 @@
   {
     "image_id": "medium_07",
     "metodo": "easyocr",
-    "tempo_ms": 762.3,
+    "tempo_ms": 675.9,
     "texto_bruto": "a",
     "campos": {
       "fabricante": "WEG Equipamentos",
@@ -261,7 +261,7 @@
   {
     "image_id": "medium_08",
     "metodo": "easyocr",
-    "tempo_ms": 1432.6,
+    "tempo_ms": 819.3,
     "texto_bruto": "l 55 Brãs:! 6073 944 ? E",
     "campos": {
       "fabricante": "",
@@ -272,7 +272,7 @@
   {
     "image_id": "medium_09",
     "metodo": "easyocr",
-    "tempo_ms": 970.4,
+    "tempo_ms": 1200.3,
     "texto_bruto": "Gonolee uno NSERF E3 200 SN2021-{8244 (z70Y 12 874A REQUENCA LSkW sotl iP COD (Q EQ2021 5533",
     "campos": {
       "cod_equipamento": "EQ-2021-5533",
@@ -284,7 +284,7 @@
   {
     "image_id": "hard_00",
     "metodo": "easyocr",
-    "tempo_ms": 497.9,
+    "tempo_ms": 610.7,
     "texto_bruto": "",
     "campos": {
       "fabricante": "",
@@ -295,7 +295,7 @@
   {
     "image_id": "hard_01",
     "metodo": "easyocr",
-    "tempo_ms": 488.3,
+    "tempo_ms": 613.5,
     "texto_bruto": "",
     "campos": {
       "fabricante": "",
@@ -306,7 +306,7 @@
   {
     "image_id": "hard_02",
     "metodo": "easyocr",
-    "tempo_ms": 558.4,
+    "tempo_ms": 725.6,
     "texto_bruto": "sh I2",
     "campos": {
       "fabricante": "",
@@ -317,7 +317,7 @@
   {
     "image_id": "hard_03",
     "metodo": "easyocr",
-    "tempo_ms": 496.3,
+    "tempo_ms": 614.8,
     "texto_bruto": "",
     "campos": {
       "fabricante": "",
@@ -328,7 +328,7 @@
   {
     "image_id": "hard_04",
     "metodo": "easyocr",
-    "tempo_ms": 490.1,
+    "tempo_ms": 613.9,
     "texto_bruto": "",
     "campos": {
       "fabricante": "",
@@ -339,7 +339,7 @@
   {
     "image_id": "hard_05",
     "metodo": "easyocr",
-    "tempo_ms": 495.9,
+    "tempo_ms": 614.7,
     "texto_bruto": "",
     "campos": {
       "fabricante": "",
@@ -350,7 +350,7 @@
   {
     "image_id": "hard_06",
     "metodo": "easyocr",
-    "tempo_ms": 500.9,
+    "tempo_ms": 615.3,
     "texto_bruto": "",
     "campos": {
       "fabricante": "",
@@ -361,7 +361,7 @@
   {
     "image_id": "hard_07",
     "metodo": "easyocr",
-    "tempo_ms": 507.0,
+    "tempo_ms": 649.5,
     "texto_bruto": "",
     "campos": {
       "fabricante": "",
@@ -372,7 +372,7 @@
   {
     "image_id": "hard_08",
     "metodo": "easyocr",
-    "tempo_ms": 565.1,
+    "tempo_ms": 690.2,
     "texto_bruto": "Ax 48i",
     "campos": {
       "fabricante": "",
@@ -383,7 +383,7 @@
   {
     "image_id": "hard_09",
     "metodo": "easyocr",
-    "tempo_ms": 556.2,
+    "tempo_ms": 662.8,
     "texto_bruto": "Y",
     "campos": {
       "fabricante": "",

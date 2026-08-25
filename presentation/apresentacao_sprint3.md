@@ -69,7 +69,8 @@ Arthur Baptista dos Santos (565346) · Joao Pedro (561738) · Nelson Felix (5656
 - Inclinação de câmera + iluminação ruim (reflexo/sub/superexposição) são o que mais derruba a
   acurácia — não o ruído/desgaste isolado
 - Campos com separador fixo (`tensão`, `corrente`) e prefixo fixo (`grau_ip`) são os piores para
-  os OCRs clássicos — um regex quebra inteiro com 1 caractere errado no separador
+  os OCRs clássicos — mas o motivo real (confirmado depois) é o texto OCR chegar vazio/destruído
+  sob degradação, não um regex frágil (ver slide seguinte)
 - `num_serie` é o campo mais difícil mesmo para o multimodal (66,7%) — único alfanumérico longo
   sem vocabulário fechado para comparar
 
@@ -87,6 +88,22 @@ Arthur Baptista dos Santos (565346) · Joao Pedro (561738) · Nelson Felix (5656
   lado a lado
 - Trade-off ainda em aberto: Abordagem C rodou como leitura direta em sessão, não via API
   (`openai_multimodal.py` está pronto mas não foi executado com chave real) — custo e latência
+  reais de API ficam como próximo passo
+
+---
+
+## Tentativa de melhoria do parsing (resultado negativo, mas real)
+
+- Hipótese inicial: erro do OCR clássico era "1 caractere errado no separador" — regex tornado
+  mais tolerante (`/` lido como `|`/traço, `kW`/`Hz`/`IP` com espaço entre letras)
+- Investigação em `results_detalhado.csv`: **89–100% dos erros por campo são predições vazias**,
+  não valores errados — regex nunca chegou a rodar sobre texto útil
+- Exemplo real: Tesseract devolveu `"45226414"` para uma corrente esperada `12.8/7.4 A`
+  (dígitos presentes, separador e ponto decimal destruídos); em outra imagem difícil, o texto
+  bruto inteiro foi `"pO"`
+- Regex melhorado + benchmark re-executado → **acurácia idêntica antes/depois** (45,7% / 24,0%)
+- Conclusão: o gargalo é a extração OCR sob degradação, não o parsing — regra mais tolerante não
+  ajuda quando não há texto para casar
   reais de API ficam como próximo passo
 
 ---
