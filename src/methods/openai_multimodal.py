@@ -4,7 +4,7 @@ Diferente das abordagens A (Tesseract) e B (EasyOCR), aqui não há uma etapa
 de OCR seguida de parsing por regex/fuzzy match (``src/methods/parsing.py``):
 o modelo recebe a imagem da placa inteira e é instruído a devolver
 diretamente um JSON com os 10 campos avaliados. É uma diferença
-arquitetural real entre as abordagens, e é discutida no relatório — o
+arquitetural real entre as abordagens, e é discutida no relatório: o
 modelo multimodal une "leitura" e "extração estruturada" em um único passo.
 
 A chave da API é lida exclusivamente da variável de ambiente
@@ -96,7 +96,7 @@ def extrair_campos(image_path: Path, image_id: str) -> ExtractionResult:
             texto_bruto=texto_bruto,
             campos=campos,
         )
-    except Exception as exc:  # noqa: BLE001 — precisa capturar qualquer falha de API/rede
+    except Exception as exc:  # noqa: BLE001 (precisa capturar qualquer falha de API/rede)
         tempo_ms = (time.perf_counter() - t0) * 1000
         return ExtractionResult(
             image_id=image_id,

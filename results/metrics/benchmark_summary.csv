@@ -1,4 +1,4 @@
 metodo,n_imagens,n_campos_avaliados,acertos_exatos,erros_exatos,exact_match_accuracy_pct,character_level_accuracy_pct,tempo_medio_ms,taxa_falha_execucao_pct,accuracy_easy_pct,accuracy_medium_pct,accuracy_hard_pct
 claude_vision,30,300,234,66,78.0,79.4,,0.0,100.0,100.0,34.0
-tesseract,30,300,137,163,45.7,45.9,2862.2,0.0,96.0,40.0,1.0
+tesseract,30,300,137,163,45.7,45.9,2076.0,0.0,96.0,40.0,1.0
 easyocr,30,300,72,228,24.0,26.3,1583.7,0.0,66.0,6.0,0.0

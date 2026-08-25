@@ -2,7 +2,7 @@
   {
     "image_id": "easy_00",
     "metodo": "tesseract",
-    "tempo_ms": 6129.7,
+    "tempo_ms": 1994.4,
     "texto_bruto": "WEG Equipamentos MODELO N SERIE 1E3 200L SN-2020-42098 TENSAO CORRENTE 380/660 V 45.2/26.1A POTENCIA FREQUENCIA 11 kW 50 Hz GRAU IP FAB. IP44 02/2020 COD. EQ. EQ-2020-7912",
     "campos": {
       "num_serie": "SN-2020-42098",
@@ -21,7 +21,7 @@
   {
     "image_id": "easy_01",
     "metodo": "tesseract",
-    "tempo_ms": 2320.9,
+    "tempo_ms": 1671.1,
     "texto_bruto": "Parker Hannifin MODELO N SERIE ALTIVAR 31 SN-2019-95181 TENSAO CORRENTE 208/360 V 68.0/39.3 A POTENCIA FREQUENCIA 22 kW 60 Hz GRAU IP. FAB. IP44 01/2019 COD. EQ. EQ-2019-5557",
     "campos": {
       "num_serie": "SN-2019-95181",
@@ -40,7 +40,7 @@
   {
     "image_id": "easy_02",
     "metodo": "tesseract",
-    "tempo_ms": 2142.0,
+    "tempo_ms": 1819.3,
     "texto_bruto": "ABB Ltda MODELO N SERIE M2BAX 132 SN-2013-59797 TENSAO CORRENTE 220/380 V 12.8/74A POTENCIA FREQUENCIA 4kW 60 Hz GRAU IP FAB. IP54 06/2013 COD. EQ. EQ-2013-8527",
     "campos": {
       "num_serie": "SN-2013-59797",
@@ -58,7 +58,7 @@
   {
     "image_id": "easy_03",
     "metodo": "tesseract",
-    "tempo_ms": 2144.5,
+    "tempo_ms": 1618.3,
     "texto_bruto": "ABB Ltda MODELO N SERIE W22 160M SN-2013-96673 TENSAO CORRENTE 380/660 V 12.8/74A POTENCIA FREQUENCIA 11 kW 50 Hz GRAU IP FAB. IP54 12/2013 COD. EQ. EQ-2013-7227",
     "campos": {
       "num_serie": "SN-2013-96673",
@@ -76,7 +76,7 @@
   {
     "image_id": "easy_04",
     "metodo": "tesseract",
-    "tempo_ms": 2271.1,
+    "tempo_ms": 1891.8,
     "texto_bruto": "Weg Motores MODELO N SERIE M2BAX 132 SN-2013-89840 TENSAO CORRENTE 380/660 V 9.2/5.3A POTENCIA FREQUENCIA 22 kW 50 Hz GRAU IP FAB. IP66 11/2013 COD. EQ. EQ-2013-7216",
     "campos": {
       "num_serie": "SN-2013-89840",
@@ -95,7 +95,7 @@
   {
     "image_id": "easy_05",
     "metodo": "tesseract",
-    "tempo_ms": 2444.9,
+    "tempo_ms": 1816.8,
     "texto_bruto": "Grundfos fT MODELO N SERIE 1E3 200L SN-2022-18675 TENSAO CORRENTE 380/660 V 9.2/5.3A POTENCIA FREQUENCIA 4kw 50 Hz GRAU IP. FAB. IP66 06/2022 COD. EQ. EQ-2022-7482",
     "campos": {
       "num_serie": "SN-2022-18675",
@@ -114,7 +114,7 @@
   {
     "image_id": "easy_06",
     "metodo": "tesseract",
-    "tempo_ms": 2234.3,
+    "tempo_ms": 2034.5,
     "texto_bruto": "Bosch Rexroth fT MODELO N SERIE CM10-3 SN-2018-86484 TENSAO CORRENTE 127/220 V 12.8/74A POTENCIA FREQUENCIA 22 kW 50 Hz GRAU IP FAB. 05/2018 COD. EQ. EQ-2018-9085",
     "campos": {
       "num_serie": "SN-2018-86484",
@@ -131,7 +131,7 @@
   {
     "image_id": "easy_07",
     "metodo": "tesseract",
-    "tempo_ms": 1946.1,
+    "tempo_ms": 2176.5,
     "texto_bruto": "Grundfos fT MODELO N SERIE CM10-3 SN-2019-88104 TENSAO CORRENTE 127/220 V 9.2/5.3A POTENCIA FREQUENCIA 37 kW 50 Hz GRAU IP. FAB. IP54 02/2019 COD. EQ. EQ-2019-9797",
     "campos": {
       "num_serie": "SN-2019-88104",
@@ -150,7 +150,7 @@
   {
     "image_id": "easy_08",
     "metodo": "tesseract",
-    "tempo_ms": 1954.5,
+    "tempo_ms": 2009.5,
     "texto_bruto": "Weg Motores MODELO N SERIE VPL-B0752F SN-2017-33416 TENSAO CORRENTE 208/360 V 28.4/16.4 A POTENCIA FREQUENCIA 37 kW 50 Hz GRAU IP FAB. IP55 01/2017 COD. EQ. EQ-2017-7126",
     "campos": {
       "num_serie": "SN-2017-33416",
@@ -169,7 +169,7 @@
   {
     "image_id": "easy_09",
     "metodo": "tesseract",
-    "tempo_ms": 2208.6,
+    "tempo_ms": 2145.3,
     "texto_bruto": "Weg Motores MODELO N SERIE ALTIVAR 31 SN-2024-17592 TENSAO CORRENTE 380/660 V 9.2/5.3A POTENCIA FREQUENCIA 11 kW 50 Hz GRAU IP FAB. IP66 06/2024 COD. EQ. EQ-2024-2133",
     "campos": {
       "num_serie": "SN-2024-17592",
@@ -188,7 +188,7 @@
   {
     "image_id": "medium_00",
     "metodo": "tesseract",
-    "tempo_ms": 3675.4,
+    "tempo_ms": 2152.4,
     "texto_bruto": "GT |N SERIE 31 | ‘SN-2023-80686 ] CORRENTE WV | V2BT4A t FREQUENCIA Ww 60 Hz [Fae 10/2023 9479",
     "campos": {
       "num_serie": "SN-2023-80686",
@@ -202,7 +202,7 @@
   {
     "image_id": "medium_01",
     "metodo": "tesseract",
-    "tempo_ms": 3007.6,
+    "tempo_ms": 2148.6,
     "texto_bruto": "WEG Equipamentos ]NSERE M2BAX 132 SN-2019-92719 TENEA CORRENTE 2230 V 45226414 POTENCIA T FRE QUENCIA 50 Hz PAL Tras P65 4/2019 1D. EO ) £Q-2019-2180",
     "campos": {
       "num_serie": "SN-2019-92719",
@@ -216,7 +216,7 @@
   {
     "image_id": "medium_02",
     "metodo": "tesseract",
-    "tempo_ms": 2824.3,
+    "tempo_ms": 2267.0,
     "texto_bruto": "Grundfos ALTIVAR 31 SN-2022-22363 \\ SERIE \\ TENSAO CORRENTE 220/380 V 68.0/39.3 A POTENCIA 4kW 60 Hz 2 CIA GRAU IP. \\P66 08/2022 COD. EQ. EQ-2022-8651 |",
     "campos": {
       "num_serie": "SN-2022-22363",
@@ -234,7 +234,7 @@
   {
     "image_id": "medium_03",
     "metodo": "tesseract",
-    "tempo_ms": 3170.2,
+    "tempo_ms": 1895.5,
     "texto_bruto": "ker Hannifin = TN SERIE SN-2013-28373 CORRENTE 45 1A | FREQUENCIA 60 Hz [i | FAB 04/2013 }COO. EO.",
     "campos": {
       "num_serie": "SN-2013-28373",
@@ -248,7 +248,7 @@
   {
     "image_id": "medium_04",
     "metodo": "tesseract",
-    "tempo_ms": 4070.4,
+    "tempo_ms": 2595.6,
     "texto_bruto": "Jantoss Brasil ESTE SRE AEC EE NSERIE SN-2016-62565 CORRENTE 45.2/26.1A FREQUENCIA 50 Hz FAB. 08/2016",
     "campos": {
       "num_serie": "SN-2016-62565",
@@ -263,7 +263,7 @@
   {
     "image_id": "medium_05",
     "metodo": "tesseract",
-    "tempo_ms": 3256.8,
+    "tempo_ms": 2339.3,
     "texto_bruto": "Parker Hanni SER Ww ? 160M St 110. 1104 = E SA 80 V 8 4/16 4 P 4 4 Que x 4 aw id Ra ps 4 2010 E ) f } 110. 220",
     "campos": {
       "fabricante": "Parker Hannifin",
@@ -274,7 +274,7 @@
   {
     "image_id": "medium_06",
     "metodo": "tesseract",
-    "tempo_ms": 2743.9,
+    "tempo_ms": 2134.0,
     "texto_bruto": "MODELO wser: INDRAMAT sf ag SIN-2011-87924 kw Oy @OHz G FAB. ag 10/2011 EQ-2011-9565 4",
     "campos": {
       "cod_equipamento": "EQ-2011-9565",
@@ -288,7 +288,7 @@
   {
     "image_id": "medium_07",
     "metodo": "tesseract",
-    "tempo_ms": 3120.1,
+    "tempo_ms": 2262.8,
     "texto_bruto": "Weg Motfores MODEL [N SER f 102-22KW SN.2020-51441 TENSA ] CORRENTE ZAW3B0 V B4NG4A POTENCIA TFREOQUENCIA 55 kW 50 He EQ-2020-9808",
     "campos": {
       "cod_equipamento": "EQ-2020-9808",
@@ -301,7 +301,7 @@
   {
     "image_id": "medium_08",
     "metodo": "tesseract",
-    "tempo_ms": 2785.8,
+    "tempo_ms": 2078.1,
     "texto_bruto": "SS [NSERE | SN-2014-49651 | { CORRENTE { 92534 I | FREQUENOA | 60 He I | FAS | ow2014",
     "campos": {
       "num_serie": "SN-2014-49651",
@@ -313,7 +313,7 @@
   {
     "image_id": "medium_09",
     "metodo": "tesseract",
-    "tempo_ms": 2258.0,
+    "tempo_ms": 2210.5,
     "texto_bruto": "Schneider Electric MODELO NSERIE 1E3 200L SN-2021-76244 TENSAO. GORRENTE 1271220 V 1287 4A POTENCIA FREQUENCIA: TSKW 50 Hz (GRAU IP FAB- 06/2021 COD. EQ. £Q-2021-5533",
     "campos": {
       "num_serie": "SN-2021-76244",
@@ -327,7 +327,7 @@
   {
     "image_id": "hard_00",
     "metodo": "tesseract",
-    "tempo_ms": 3157.5,
+    "tempo_ms": 2062.6,
     "texto_bruto": "pO",
     "campos": {
       "fabricante": "",
@@ -338,7 +338,7 @@
   {
     "image_id": "hard_01",
     "metodo": "tesseract",
-    "tempo_ms": 2636.0,
+    "tempo_ms": 1798.8,
     "texto_bruto": ".",
     "campos": {
       "fabricante": "",
@@ -349,7 +349,7 @@
   {
     "image_id": "hard_02",
     "metodo": "tesseract",
-    "tempo_ms": 2855.9,
+    "tempo_ms": 1960.3,
     "texto_bruto": "an Q O",
     "campos": {
       "fabricante": "",
@@ -360,7 +360,7 @@
   {
     "image_id": "hard_03",
     "metodo": "tesseract",
-    "tempo_ms": 3944.1,
+    "tempo_ms": 2805.1,
     "texto_bruto": "ww - Mk A = — o—_ _ — - — =) ~ a Ai’ Tt — — Ga 7 rer aoe n — oe _ _ — — - 4",
     "campos": {
       "fabricante": "",
@@ -371,7 +371,7 @@
   {
     "image_id": "hard_04",
     "metodo": "tesseract",
-    "tempo_ms": 2774.4,
+    "tempo_ms": 1991.4,
     "texto_bruto": "BNL) WTASK Dye WEN",
     "campos": {
       "fabricante": "",
@@ -382,7 +382,7 @@
   {
     "image_id": "hard_05",
     "metodo": "tesseract",
-    "tempo_ms": 2463.5,
+    "tempo_ms": 2040.4,
     "texto_bruto": "_— Daal A é 7 awn View at ; 7 ; - ’ 7 a 7 Py 7 oer 7 7 i ; ; ~~ ae 5 j 7 : ‘ PF 7 = ‘ 7 7 F be va | CIEE ern eee Cee |",
     "campos": {
       "fabricante": "",
@@ -393,7 +393,7 @@
   {
     "image_id": "hard_06",
     "metodo": "tesseract",
-    "tempo_ms": 3319.7,
+    "tempo_ms": 2279.4,
     "texto_bruto": "1 \\ ‘ : t ¥ ' + 0 ‘ 1 ' ' , t foe 1 ‘ . + ' ' 1 ‘ . - ‘ ' ‘ ‘ ' ' ' 7 ' ‘ 1 ' 1 ‘ ° + ' ' . ' ' ' ' t ee ot",
     "campos": {
       "fabricante": "",
@@ -404,7 +404,7 @@
   {
     "image_id": "hard_07",
     "metodo": "tesseract",
-    "tempo_ms": 3128.4,
+    "tempo_ms": 2413.3,
     "texto_bruto": "ee @\" ‘e — — — — —",
     "campos": {
       "fabricante": "",
@@ -415,7 +415,7 @@
   {
     "image_id": "hard_08",
     "metodo": "tesseract",
-    "tempo_ms": 2951.4,
+    "tempo_ms": 1908.2,
     "texto_bruto": "Neg Wi we RN x wr",
     "campos": {
       "fabricante": "",
@@ -426,7 +426,7 @@
   {
     "image_id": "hard_09",
     "metodo": "tesseract",
-    "tempo_ms": 1927.0,
+    "tempo_ms": 1759.6,
     "texto_bruto": "Danioss Brash",
     "campos": {
       "fabricante": "Danfoss Brasil",

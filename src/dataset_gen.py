@@ -10,7 +10,7 @@ pois os pesos treinados não foram persistidos e retreinar sem GPU é inviável
 no prazo). O experimento controlado desta Sprint isola exatamente a variável
 que a Sprint 1 mediu como gargalo real (leitura/extração de campos, 0% de
 acurácia global no lote de teste), comparando 3 abordagens de LEITURA sobre a
-placa já recortada — não de detecção.
+placa já recortada, não de detecção.
 
 O Ground Truth é gravado em CSV ANTES de qualquer execução de OCR, a partir
 dos parâmetros usados para desenhar cada placa (nunca a partir do resultado
@@ -176,7 +176,7 @@ def aplicar_degradacao(img_pil: Image.Image, cfg: DegradationConfig, rng: random
     """Aplica degradações controladas diretamente sobre a placa recortada.
 
     Adaptado da etapa de augmentation da Sprint 1, removendo a etapa 6
-    (inserção em cena de fundo maior) — aqui a saída permanece do tamanho da
+    (inserção em cena de fundo maior): aqui a saída permanece do tamanho da
     placa, pois o experimento avalia apenas leitura, não detecção.
     """
     img = np.array(img_pil)
@@ -256,7 +256,7 @@ def gerar_dataset_teste(seed: int = RANDOM_SEED, out_dir: Path = TEST_DIR,
                          gt_csv: Path = GROUND_TRUTH_CSV) -> list[dict]:
     """Gera as 30 imagens de teste (10/10/10) e grava o Ground Truth em CSV.
 
-    O CSV é gravado ANTES de qualquer execução de OCR — a coluna
+    O CSV é gravado ANTES de qualquer execução de OCR: a coluna
     ``ground_truth_*`` vem exclusivamente dos parâmetros usados para desenhar
     a placa, nunca do resultado de um modelo.
     """

@@ -1,4 +1,4 @@
-# Evidências de Execução — Sprint 3
+# Evidências de Execução: Sprint 3
 
 Amostras reais das 30 imagens de teste (1 por nível de dificuldade) e a saída de cada uma das
 3 abordagens sobre elas, extraídas diretamente de `results/raw/*.json` e comparadas com
@@ -14,7 +14,7 @@ Amostras reais das 30 imagens de teste (1 por nível de dificuldade) e a saída 
 | Acurácia por campo extraído | `../results/visualizations/accuracy_by_field.png` |
 | Tempo médio de processamento | `../results/visualizations/processing_time.png` |
 
-## Exemplo 1 — `easy_00` (fácil)
+## Exemplo 1: `easy_00` (fácil)
 
 ![easy_00](exemplo_easy_00.png)
 
@@ -32,10 +32,10 @@ Amostras reais das 30 imagens de teste (1 por nível de dificuldade) e a saída 
 | cod_equipamento | EQ-2020-7912 | EQ-2020-7912 ✅ | EQ-2020-7912 ✅ | EQ-2020-7912 ✅ |
 
 Em condição fácil, Tesseract e a leitura multimodal acertam os 10/10 campos; o EasyOCR já perde
-3 campos mesmo aqui (fabricante, corrente, grau_ip) — primeiro sinal de que ele generaliza pior
+3 campos mesmo aqui (fabricante, corrente, grau_ip), primeiro sinal de que ele generaliza pior
 para este layout de placa do que na Sprint 2.
 
-## Exemplo 2 — `medium_00` (médio — inclinação de câmera + iluminação variável)
+## Exemplo 2: `medium_00` (médio, inclinação de câmera + iluminação variável)
 
 ![medium_00](exemplo_medium_00.png)
 
@@ -53,10 +53,10 @@ para este layout de placa do que na Sprint 2.
 | cod_equipamento | EQ-2023-9479 | *(vazio)* ❌ | *(vazio)* ❌ | EQ-2023-9479 ✅ |
 
 A leitura multimodal acerta os 10/10 campos mesmo com inclinação de câmera; os dois OCRs
-clássicos praticamente colapsam (2/10 e 0/10) — confirma que a perspectiva de captura é o
-fator que mais expõe a fragilidade da dupla OCR+regex.
+clássicos praticamente colapsam (2/10 e 0/10), o que confirma que a perspectiva de captura é
+o fator que mais expõe a fragilidade da dupla OCR+regex.
 
-## Exemplo 3 — `hard_00` (difícil — reflexo/baixa iluminação + inclinação forte + baixa resolução)
+## Exemplo 3: `hard_00` (difícil, reflexo/baixa iluminação + inclinação forte + baixa resolução)
 
 ![hard_00](exemplo_hard_00.png)
 
@@ -74,7 +74,7 @@ fator que mais expõe a fragilidade da dupla OCR+regex.
 | cod_equipamento | EQ-2018-3088 | *(vazio)* ❌ | *(vazio)* ❌ | EQ-2018-3088 ✅ |
 
 Em condição difícil, os dois OCRs clássicos zeram (0/10) e a leitura multimodal ainda acerta
-8/10 — só falha nos dois campos mais degradados da imagem (`num_serie`, `corrente`), e falha
+8/10: só falha nos dois campos mais degradados da imagem (`num_serie`, `corrente`), e o faz
 devolvendo campo vazio em vez de um valor inventado (comportamento discutido na seção 6.1 do
 relatório técnico).
 

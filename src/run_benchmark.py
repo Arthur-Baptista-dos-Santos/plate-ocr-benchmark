@@ -42,7 +42,7 @@ def executar(nome_metodo: str) -> Path:
         resultado = extrair_campos(image_path, linha["image_id"])
         resultados.append(resultado.to_dict())
         status = "erro" if resultado.erro else "ok"
-        print(f"[{nome_metodo}] {linha['image_id']} ({status}) — {resultado.tempo_ms:.0f} ms")
+        print(f"[{nome_metodo}] {linha['image_id']} ({status}): {resultado.tempo_ms:.0f} ms")
 
     RAW_RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     out_path = RAW_RESULTS_DIR / f"{nome_metodo}.json"

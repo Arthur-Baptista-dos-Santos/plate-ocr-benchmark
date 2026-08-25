@@ -1,6 +1,6 @@
 # `Plate OCR Benchmark: Leitura de Placas de Ativos Industriais`
 
-> Benchmark controlado de 3 abordagens de leitura/extração de campos de placas de motores elétricos — Tesseract, EasyOCR e um modelo multimodal com visão — sobre 30 imagens de teste com gabarito, medido por Exact Match Accuracy e Character-level Accuracy. Sprint 3 do projeto Forzy, FIAP 2026.
+> Benchmark controlado de 3 abordagens de leitura/extração de campos de placas de motores elétricos (Tesseract, EasyOCR e um modelo multimodal com visão) sobre 30 imagens de teste com gabarito, medido por Exact Match Accuracy e Character-level Accuracy. Sprint 3 do projeto Forzy, FIAP 2026.
 
 ---
 
@@ -19,12 +19,12 @@
 
 ## `O que faz`
 
-Retoma o gargalo real medido na Sprint 1 do projeto Forzy — pipeline YOLOv8 + OCR com **0% de
-acurácia global** de leitura de campos no lote de teste — e ataca especificamente essa etapa,
-sob um experimento controlado e reprodutível:
+Retoma o gargalo real medido na Sprint 1 do projeto Forzy: o pipeline YOLOv8 + OCR obteve **0%
+de acurácia global** na leitura de campos no lote de teste. Este projeto ataca especificamente
+essa etapa, sob um experimento controlado e reprodutível:
 
 - Gera um conjunto de teste de **30 imagens sintéticas** de placas de motor (10 fácil / 10 médio
-  / 10 difícil), com gabarito gravado **antes** de qualquer OCR rodar
+  / 10 difícil), com gabarito gravado **antes** de qualquer execução de OCR
 - Roda **3 abordagens de leitura** sobre as mesmas 30 imagens: Tesseract, EasyOCR e um modelo
   multimodal com visão
 - Calcula **Exact Match Accuracy** e **Character-level Accuracy (1 − CER)** por campo, por
@@ -73,12 +73,12 @@ src/
 - **Ground Truth cego**: gravado a partir dos parâmetros usados para desenhar cada placa,
   nunca a partir da saída de um modelo
 - **Mesmo parser para A e B**: Tesseract e EasyOCR passam pelo mesmo extrator de campos
-  (regex + fuzzy match), isolando a variável "qualidade do OCR" entre as duas
+  (regex + fuzzy match), isolando a variável "qualidade do OCR" entre as duas abordagens
 - **Duas métricas, não misturadas**: Exact Match Accuracy (um caractere errado invalida o
-  campo — reflete o problema real) e Character-level Accuracy via distância de Levenshtein
+  campo, refletindo o problema real) e Character-level Accuracy via distância de Levenshtein
   (mede o quão perto chegou mesmo quando erra)
 - **3 níveis de dificuldade**: iluminação (normal/sombra/reflexo/sub-superexposta),
-  desgaste/sujeira (limpa a severa/óleo), ângulo de câmera (0° a 40°) e resolução
+  desgaste/sujeira (de limpa a severa, com óleo), ângulo de câmera (0° a 40°) e resolução
 
 ---
 
@@ -107,7 +107,7 @@ plate-ocr-benchmark/
 
 ---
 
-## `Instalacao`
+## `Instalação`
 
 ```bash
 git clone https://github.com/Arthur-Baptista-dos-Santos/plate-ocr-benchmark.git
@@ -148,23 +148,23 @@ pytest -q                                         # 17 testes unitarios (metrica
 - **`OCR neural`**: EasyOCR (rede neural convolucional), com pré-processamento por
   equalização de histograma e filtro gaussiano
 - **`Modelo multimodal`**: leitura e extração estruturada de campos num único passo,
-  sem etapa de regex separada — diferença arquitetural real frente ao OCR clássico
+  sem etapa de regex separada, diferença arquitetural real frente ao OCR clássico
 - **`Avaliação cega`**: Ground Truth definido antes de qualquer execução de OCR
 - **`Métricas de leitura`**: Exact Match Accuracy e Character Error Rate (distância de
   Levenshtein), aplicadas de forma idêntica às 3 abordagens
 
 ---
 
-## `Licenca`
+## `Licença`
 
-Distribuido sob a licenca MIT. Veja [LICENSE](LICENSE) para mais informacoes.
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações.
 
 ---
 
 ## `Autor`
 
 **Arthur Baptista dos Santos**
-RM 565346 · Inteligencia Artificial · FIAP 2025-2026
+RM 565346 · Inteligência Artificial · FIAP 2025-2026
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Arthur%20Baptista-0077B5?logo=linkedin)](https://linkedin.com/in/arthur-baptista-dos-santos)
 [![GitHub](https://img.shields.io/badge/GitHub-Arthur--Baptista--dos--Santos-181717?logo=github)](https://github.com/Arthur-Baptista-dos-Santos)

@@ -16,7 +16,7 @@ import pandas as pd
 
 def _sem_nan(registro: dict) -> dict:
     """Substitui float('nan') por None (pandas não representa None em
-    colunas float64, então .where()/.replace() não bastam — precisa ser
+    colunas float64, então .where()/.replace() não bastam; precisa ser
     feito após to_dict(), campo a campo)."""
     return {
         k: (None if isinstance(v, float) and math.isnan(v) else v)

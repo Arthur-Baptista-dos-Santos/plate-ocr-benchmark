@@ -1,6 +1,6 @@
 """Gera report/relatorio_tecnico.pdf a partir dos dados reais do benchmark.
 
-Não depende de pandoc/weasyprint (indisponíveis no ambiente) — usa reportlab
+Não depende de pandoc/weasyprint (indisponíveis no ambiente); usa reportlab
 diretamente, com um layout no mesmo padrão visual dos relatórios das Sprints
 1 e 2 (capa com tabela de equipe, barras de seção em azul, tabelas com
 cabeçalho azul-marinho, figuras com legenda).
@@ -118,7 +118,7 @@ def build() -> None:
     doc = SimpleDocTemplate(
         str(OUT), pagesize=A4,
         leftMargin=2 * cm, rightMargin=2 * cm, topMargin=1.8 * cm, bottomMargin=1.8 * cm,
-        title="Sprint 3 — Benchmark de Leitura de Placas Industriais",
+        title="Sprint 3: Benchmark de Leitura de Placas Industriais",
         author="Arthur Baptista dos Santos",
     )
     story = []
@@ -127,7 +127,7 @@ def build() -> None:
     story.append(Spacer(1, 3 * cm))
     story.append(Paragraph("SPRINT 3", styles["CoverTitle"]))
     story.append(Paragraph("Evolução do Protótipo de Leitura de Placas", styles["CoverSubtitle"]))
-    story.append(Paragraph("Digital Twin de Ativos Industriais — Disciplina: Visão Computacional",
+    story.append(Paragraph("Digital Twin de Ativos Industriais: Disciplina de Visão Computacional",
                             styles["CoverSubtitle"]))
     story.append(Spacer(1, 1.5 * cm))
     story.append(make_table(
@@ -141,7 +141,7 @@ def build() -> None:
     story.append(note(
         "Status deste documento: completo. Todos os números de acurácia (seções 5 e 6) foram "
         "calculados pelo pipeline real (<b>src/evaluation/aggregate.py</b>) sobre as 30 imagens "
-        "de teste — nenhum valor foi estimado ou inventado. Única ressalva: a Abordagem C foi "
+        "de teste; nenhum valor foi estimado ou inventado. Única ressalva: a Abordagem C foi "
         "executada nesta rodada como leitura multimodal direta em sessão, não via chamada à API "
         "OpenAI (ver nota na seção 5)."
     ))
@@ -150,9 +150,9 @@ def build() -> None:
     # --- 1. Continuidade -------------------------------------------------
     story.append(h1("1. Continuidade real em relação às Sprints anteriores"))
     story.append(p("Antes de descrever a Sprint 3, é necessário registrar com precisão o que as "
-                    "Sprints 1 e 2 efetivamente mostraram — a Sprint 3 herda diretamente essas "
+                    "Sprints 1 e 2 efetivamente mostraram, pois a Sprint 3 herda diretamente essas "
                     "limitações."))
-    story.append(h2("Sprint 1 (FORZY) — o que o notebook realmente produziu"))
+    story.append(h2("Sprint 1 (FORZY): o que o notebook realmente produziu"))
     story.append(p("O relatório da Sprint 1 descreve um pipeline YOLOv8 (detecção) + "
                     "Tesseract/TrOCR (OCR) sobre um dataset sintético de 1.200 imagens. A "
                     "execução real do notebook sobre o conjunto de teste de <b>180 imagens</b> "
@@ -163,14 +163,14 @@ def build() -> None:
          ["Score de detecção médio", "97,2%"],
          ["Score OCR médio", "43,9%"],
          ["Acurácia global (placa 100% correta)", "0,0%"],
-         ["CER — tensão/potência/frequência/grau IP/data_fab", "100% (nenhum campo correto)"],
+         ["CER: tensão/potência/frequência/grau IP/data_fab", "100% (nenhum campo correto)"],
          ["Tempo médio por imagem", "~10,2 s"]],
         col_widths=[10 * cm, 5.5 * cm],
     ))
-    story.append(p("Ou seja: a <b>detecção</b> funcionou bem; a <b>leitura de campos</b> não — "
+    story.append(p("Ou seja: a <b>detecção</b> funcionou bem; já a <b>leitura de campos</b> não: "
                     "zero placas tiveram todos os campos lidos corretamente no lote de teste. "
                     "Essa é a lacuna real que a Sprint 3 ataca."))
-    story.append(h2("Sprint 2 (Digital Twin) — o que foi medido"))
+    story.append(h2("Sprint 2 (Digital Twin): o que foi medido"))
     story.append(p("Testou apenas <b>EasyOCR</b>, sobre <b>3 imagens</b> sintéticas, com "
                     "avaliação manual (inspeção visual, sem métrica de distância de edição). "
                     "Resultado reportado: ~87% / ~62% / ~50% de campos corretos."))
@@ -182,7 +182,7 @@ def build() -> None:
     story.append(h2("O que muda na Sprint 3"))
     story.append(bullets([
         "<b>Escopo controlado</b>: avalia apenas leitura/extração de campos sobre a placa já "
-        "enquadrada — os pesos do YOLOv8 da Sprint 1 não foram persistidos e retreinar sem GPU "
+        "enquadrada. Os pesos do YOLOv8 da Sprint 1 não foram persistidos e retreinar sem GPU "
         "não é viável no prazo; retomar a detecção fica como próximo passo (seção 7).",
         "<b>3 abordagens comparadas</b> sob o mesmo protocolo: Tesseract, EasyOCR e um modelo "
         "multimodal com visão.",
@@ -195,10 +195,10 @@ def build() -> None:
     # --- 2. Abordagens ----------------------------------------------------
     story.append(h1("2. Abordagens testadas"))
     story.append(make_table(
-        ["", "A — Tesseract", "B — EasyOCR", "C — Multimodal (visão)"],
+        ["", "A: Tesseract", "B: EasyOCR", "C: Multimodal (visão)"],
         [
             ["Tipo", "OCR clássico (LSTM)", "OCR neural (CRNN)", "LLM com visão"],
-            ["Pré-processamento", "3 variantes × 2 PSM, melhor confiança", "Cinza + equalização + blur", "Nenhum — imagem direta"],
+            ["Pré-processamento", "3 variantes × 2 PSM, melhor confiança", "Cinza + equalização + blur", "Nenhum: imagem direta"],
             ["Extração de campos", "Regex + fuzzy match", "Mesmo parser da A", "Modelo devolve JSON estruturado"],
             ["Motor", "pytesseract (Tesseract 5.4 local)", "easyocr.Reader(['pt','en']), CPU", "GPT-4o-mini via API (implementado); executado nesta rodada como leitura direta em sessão"],
         ],
@@ -207,8 +207,8 @@ def build() -> None:
     story.append(Spacer(1, 8))
     story.append(p("<b>Por que separar OCR clássico de multimodal na arquitetura:</b> as "
                     "abordagens A e B usam o mesmo módulo de parsing (regex/fuzzy) sobre texto "
-                    "bruto — isso isola a variável \"qualidade do OCR\" entre elas. A abordagem "
-                    "C funde leitura e extração estruturada num único passo do modelo — diferença "
+                    "bruto; isso isola a variável \"qualidade do OCR\" entre elas. A abordagem "
+                    "C funde leitura e extração estruturada num único passo do modelo, diferença "
                     "arquitetural real, discutida na seção 6."))
 
     # --- 3. Dataset ---------------------------------------------------------
@@ -232,16 +232,16 @@ def build() -> None:
     story.append(Spacer(1, 8))
     story.append(h2("3.4 Ground Truth"))
     story.append(p("Gravado em <b>data/ground_truth.csv</b> antes de qualquer OCR rodar, a "
-                    "partir dos parâmetros usados para desenhar cada placa — nunca a partir da "
+                    "partir dos parâmetros usados para desenhar cada placa, nunca a partir da "
                     "saída de um modelo."))
 
     # --- 4. Métricas ----------------------------------------------------
     story.append(h1("4. Métricas"))
     story.append(bullets([
         "<b>Exact Match Accuracy</b>: 1 se o valor normalizado for idêntico ao gabarito, 0 caso "
-        "contrário. Métrica principal — um caractere errado torna o dado inutilizável na prática.",
+        "contrário. Métrica principal: um caractere errado torna o dado inutilizável na prática.",
         "<b>Character-level Accuracy (1 − CER)</b>: distância de edição de Levenshtein sobre o "
-        "valor normalizado — mede o quão perto a leitura chegou mesmo sem acerto exato.",
+        "valor normalizado; mede o quão perto a leitura chegou mesmo sem acerto exato.",
     ]))
     story.append(PageBreak())
 
@@ -262,26 +262,26 @@ def build() -> None:
         col_widths=[4.2 * cm, 2.7 * cm, 2.5 * cm, 2 * cm, 2 * cm, 2 * cm],
     ))
     story.append(Spacer(1, 6))
-    story.append(p("Nenhuma abordagem teve falha de execução (0%) nas 30 imagens — todas as "
+    story.append(p("Nenhuma abordagem teve falha de execução (0%) nas 30 imagens; todas as "
                     "diferenças vêm de acurácia de leitura, não de falhas técnicas."))
     story.extend(figure(VIS / "accuracy_comparison.png",
-                         "Figura 1 — Acurácia geral (Exact Match) por abordagem."))
+                         "Figura 1: Acurácia geral (Exact Match) por abordagem."))
 
     story.append(h2("5.2 Acurácia por nível de dificuldade"))
     story.extend(figure(VIS / "accuracy_by_difficulty.png",
-                         "Figura 2 — Acurácia por nível de dificuldade e abordagem."))
+                         "Figura 2: Acurácia por nível de dificuldade e abordagem."))
     story.append(p("Nas imagens <b>fáceis</b>, multimodal e Tesseract praticamente empatam "
-                    "(100% vs. 96%). A partir do nível <b>médio</b> (inclinação 10°–18°), "
+                    "(100% vs. 96%). A partir do nível <b>médio</b> (inclinação 10°-18°), "
                     "Tesseract cai para 40% e EasyOCR para 6%, enquanto o multimodal mantém "
                     "100%. No nível <b>difícil</b> o multimodal também degrada (100%→34%), mas "
                     "permanece muito acima do Tesseract (1,0%) e do EasyOCR (0,0%)."))
     story.append(p("Confirma o padrão das Sprints 1 e 2: <b>inclinação de câmera e degradação "
-                    "de iluminação são o fator que mais destrói a acurácia do OCR clássico</b> — "
+                    "de iluminação são o fator que mais destrói a acurácia do OCR clássico</b>, "
                     "não o ruído/desgaste isoladamente."))
 
     story.append(h2("5.3 Acurácia por campo"))
     story.extend(figure(VIS / "accuracy_by_field.png",
-                         "Figura 3 — Exact Match Accuracy por campo extraído."))
+                         "Figura 3: Exact Match Accuracy por campo extraído."))
     story.append(make_table(
         ["Campo", "Tesseract", "EasyOCR", "Multimodal"],
         [["fabricante", "60,0", "26,7", "90,0"],
@@ -298,10 +298,10 @@ def build() -> None:
     ))
     story.append(Spacer(1, 6))
     story.append(p("Para os OCRs clássicos, campos com separador (tensão, corrente, formato "
-                    "X/Y) e prefixo fixo (grau_ip) são os piores — o regex depende desses "
+                    "X/Y) e prefixo fixo (grau_ip) são os piores: o regex depende desses "
                     "caracteres serem lidos perfeitamente. num_serie continua sendo o campo mais "
-                    "difícil mesmo para o multimodal (66,7%) — único alfanumérico longo sem "
-                    "vocabulário fechado."))
+                    "difícil mesmo para o multimodal (66,7%), pois é o único alfanumérico longo "
+                    "sem vocabulário fechado."))
 
     # --- 6. Análise de erros --------------------------------------------
     story.append(PageBreak())
@@ -313,23 +313,23 @@ def build() -> None:
         "separador/prefixo (limitação do parser). Investigando results_detalhado.csv, isso não "
         "se sustentou: 89% a 100% das predições erradas por campo são <b>vazias</b> (o regex "
         "não achou nada), não um valor errado por 1 caractere. Exemplo real "
-        "(medium_01, corrente esperada 45.2/26.1 A): o Tesseract devolveu \"45226414\" — os "
+        "(medium_01, corrente esperada 45.2/26.1 A): o Tesseract devolveu \"45226414\". Os "
         "dígitos aparecem, mas ponto decimal e barra desapareceram por completo. Em hard_00, o "
         "texto bruto inteiro devolvido foi \"pO\"."
     ))
     story.append(bullets([
         "<b>Tentativa de melhoria do parsing</b> (a pedido, após a 1ª rodada): parsing.py foi "
         "ajustado para tolerar ruído comum de OCR (separador / lido como | ou traço, "
-        "abreviações kW/Hz/IP com espaço entre letras). Benchmark re-executado — "
-        "<b>resultado: acurácia idêntica antes e depois</b> (Tesseract 45,7%, EasyOCR 24,0%, "
+        "abreviações kW/Hz/IP com espaço entre letras). Benchmark re-executado: "
+        "<b>resultado, acurácia idêntica antes e depois</b> (Tesseract 45,7%, EasyOCR 24,0%, "
         "sem nenhuma mudança). Confirma empiricamente que o gargalo está na extração OCR sob "
-        "degradação, não no parsing — resultado negativo registrado como achado válido.",
-        "<b>EasyOCR ficou sistematicamente abaixo do Tesseract</b> em quase todos os campos — "
-        "inverso do sugerido pela Sprint 2 (que só testou EasyOCR, N=3). A conclusão anterior "
+        "degradação, não no parsing, resultado negativo registrado como achado válido.",
+        "<b>EasyOCR ficou sistematicamente abaixo do Tesseract</b> em quase todos os campos, "
+        "o inverso do sugerido pela Sprint 2 (que só testou EasyOCR, N=3). A conclusão anterior "
         "não se sustentou sob um teste maior e mais adverso.",
-        "<b>Multimodal:</b> ponto fraco é o nível difícil (34,0%) — a maioria das falhas é campo "
-        "<b>vazio</b> (não lido), não um valor errado, concentrada em imagens com baixa "
-        "resolução + reflexo/subexposição forte. Tende a admitir que não leu em vez de alucinar "
+        "<b>Multimodal:</b> o ponto fraco é o nível difícil (34,0%). A maioria das falhas é "
+        "campo <b>vazio</b> (não lido), não um valor errado, concentrada em imagens com baixa "
+        "resolução e reflexo/subexposição forte. Tende a admitir que não leu em vez de alucinar "
         "um valor.",
     ]))
     story.append(h2("6.2 Multimodal vs. OCR clássico"))
@@ -337,7 +337,7 @@ def build() -> None:
         ["Dimensão", "OCR clássico", "Multimodal"],
         [["Acurácia (fácil)", "Competitivo (96%/66%)", "Melhor (100%)"],
          ["Acurácia (médio/difícil)", "Degrada abruptamente (≤40%, chega a 0%)", "Degrada, mas fica acima (100%→34%)"],
-         ["Arquitetura", "2 etapas (OCR + regex) — erro pode vir de qualquer uma", "1 etapa — mais robusto, mas caixa-preta"],
+         ["Arquitetura", "2 etapas (OCR + regex); erro pode vir de qualquer uma", "1 etapa; mais robusto, mas caixa-preta"],
          ["Execução", "Local, offline, sem custo marginal", "Depende de modelo com visão (API paga ou sessão)"],
          ["Erros típicos", "Campo vazio (texto OCR já degradado, não erro de 1 caractere)", "Campo vazio em condição extrema"]],
         col_widths=[3.7 * cm, 6 * cm, 6 * cm], font_size=7.5,
@@ -345,7 +345,7 @@ def build() -> None:
     story.append(Spacer(1, 6))
     story.append(p("<b>Conclusão desta Sprint:</b> a leitura multimodal supera claramente os "
                     "dois OCRs clássicos, principalmente por não depender de um parser regex "
-                    "frágil — mas nenhuma das 3 abordagens está pronta para produção sem controle "
+                    "frágil, mas nenhuma das 3 abordagens está pronta para produção sem controle "
                     "de qualidade adicional (ex.: recusar leitura abaixo de um limiar de "
                     "confiança)."))
 
@@ -363,10 +363,10 @@ def build() -> None:
     ))
 
     # --- 8. Nota técnica ---------------------------------------------------
-    story.append(h1("8. Nota técnica — caminhos Unicode no Windows"))
+    story.append(h1("8. Nota técnica: caminhos Unicode no Windows"))
     story.append(p("O diretório do projeto contém caracteres Unicode (\"VISÃO\", \"º\"). "
-                    "cv2.imread/cv2.imwrite falham <b>silenciosamente</b> nesse caso no Windows "
-                    "— retornam None/False sem lançar exceção, o que fez uma primeira execução "
+                    "cv2.imread/cv2.imwrite falham <b>silenciosamente</b> nesse caso no Windows: "
+                    "retornam None/False sem lançar exceção, o que fez uma primeira execução "
                     "do gerador de dataset \"funcionar\" sem erro mas sem gravar nenhum PNG. "
                     "Corrigido com wrappers dedicados (src/utils/io_utils.py) usados em "
                     "dataset_gen.py, tesseract_method.py e easyocr_method.py."))

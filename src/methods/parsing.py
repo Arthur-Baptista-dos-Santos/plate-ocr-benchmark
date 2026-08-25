@@ -3,7 +3,7 @@
 usam exatamente a mesma lógica de extração de campos a partir daqui. Isso
 garante que diferenças de acurácia venham do OCR, não do parsing.
 
-A abordagem C (multimodal) NÃO usa este módulo — o modelo extrai os campos
+A abordagem C (multimodal) NÃO usa este módulo: o modelo extrai os campos
 estruturados diretamente da imagem, sem uma etapa de regex separada. Essa é
 uma diferença arquitetural real entre as abordagens, discutida no relatório.
 """
@@ -18,11 +18,11 @@ from src.dataset_gen import FABRICANTES, MODELOS
 # gabarito do teste): inspecionando texto_bruto de casos de erro em
 # results/raw/tesseract.json, a barra "/" é frequentemente lida como "|",
 # "l" ou traço; abreviações de 2 letras ("kW", "Hz", "IP") às vezes saem com
-# espaço entre as letras. Ver seção 6.1 do relatório para a análise completa
-# — a maioria dos erros continua sendo texto irrecuperável (campo vazio), não
+# espaço entre as letras. Ver seção 6.1 do relatório para a análise completa:
+# a maioria dos erros continua sendo texto irrecuperável (campo vazio), não
 # separador mal lido, então este tuning tem impacto esperado modesto.
 _SEP = r"[/\\|]"  # separador tolerante a "/", "\" e "|" (confusão comum de OCR)
-_TRACO = r"[\s\-–—]?"  # hífen/travessão/espaço, tolerante a variantes de traço
+_TRACO = r"[\s\-–]?"  # hífen, en dash ou espaço, tolerante a variantes de traço lidas pelo OCR
 
 _RE_NUM_SERIE = re.compile(rf"SN{_TRACO}(\d{{4}}){_TRACO}(\d{{4,6}})", re.IGNORECASE)
 _RE_COD_EQUIP = re.compile(rf"EQ{_TRACO}(\d{{4}}){_TRACO}(\d{{3,4}})", re.IGNORECASE)
@@ -42,7 +42,7 @@ def _melhor_correspondencia(texto: str, vocabulario: list[str]) -> str:
     """Encontra o item do vocabulário mais próximo do texto OCR (fuzzy match).
 
     Usado para fabricante/modelo, que são campos de texto livre e não seguem
-    um padrão regex — a alternativa realista de parsing é casar contra um
+    um padrão regex: a alternativa realista de parsing é casar contra um
     catálogo conhecido, como sistemas de gestão de ativos fazem na prática.
     """
     melhor_item, melhor_score = "", 0.0

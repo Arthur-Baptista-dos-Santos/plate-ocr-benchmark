@@ -2,7 +2,7 @@
 
 ``cv2.imread``/``cv2.imwrite`` usam ``fopen`` internamente e falham
 silenciosamente (retornam ``None``/``False``, sem exceção) quando o caminho
-contém caracteres não-ASCII — como o nome deste projeto ("VISÃO...2º SEM").
+contém caracteres não-ASCII, como o nome deste projeto ("VISÃO...2º SEM").
 As funções abaixo contornam isso via ``imdecode``/``imencode`` + I/O padrão
 do Python, que lida corretamente com Unicode no Windows.
 """

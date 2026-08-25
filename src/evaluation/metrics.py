@@ -2,11 +2,11 @@
 
 Duas famílias de métrica, propositalmente não misturadas:
 
-1. Exact Match Accuracy — um campo só conta como acerto se, após
+1. Exact Match Accuracy: um campo só conta como acerto se, após
    ``normalize_exact``, for idêntico ao Ground Truth. É a métrica principal:
    um único caractere errado em um número de série ou tensão pode tornar a
    placa inutilizável na prática.
-2. Character-level Accuracy (1 - CER) — baseada em distância de edição
+2. Character-level Accuracy (1 - CER): baseada em distância de edição
    (Levenshtein) sobre ``normalize_cer``. Mede o quão "perto" a leitura
    chegou, mesmo quando não é um acerto exato.
 """

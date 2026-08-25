@@ -1,7 +1,7 @@
 """Abordagem B: OpenCV (pré-processamento) + EasyOCR (rede neural) + regex.
 
 Reaproveita o motor validado na Sprint 2 (Digital Twin), substituindo
-PaddleOCR (descartado por atrito de instalação no Windows — ver README) por
+PaddleOCR (descartado por atrito de instalação no Windows, ver README) por
 um OCR neural já testado, usando o MESMO parser de campos da Abordagem A
 para isolar a variável "qualidade do OCR".
 """
