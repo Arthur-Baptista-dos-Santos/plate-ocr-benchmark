@@ -1,6 +1,6 @@
 [
   {
-    "metodo": "claude_vision",
+    "metodo": "multimodal_vision",
     "n_imagens": 30,
     "n_campos_avaliados": 300,
     "acertos_exatos": 234,

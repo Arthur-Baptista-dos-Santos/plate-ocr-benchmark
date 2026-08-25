@@ -191,8 +191,6 @@ medium_09,medium,tesseract,corrente,,12.8/7.4 A,False,1.0,0.0,False,2210.5
 medium_09,medium,tesseract,potencia,,7.5 kW,False,1.0,0.0,False,2210.5
 medium_09,medium,tesseract,grau_ip,,IP66,False,1.0,0.0,False,2210.5
 medium_09,medium,tesseract,cod_equipamento,,EQ-2021-5533,False,1.0,0.0,False,2210.5
-hard_00,hard,claude_vision,num_serie,,SN-2018-29536,False,1.0,0.0,False,
-hard_00,hard,claude_vision,corrente,,28.4/16.4 A,False,1.0,0.0,False,
 hard_00,hard,easyocr,fabricante,,ABB Ltda,False,1.0,0.0,False,610.7
 hard_00,hard,easyocr,modelo,,M2BAX 132,False,1.0,0.0,False,610.7
 hard_00,hard,easyocr,num_serie,,SN-2018-29536,False,1.0,0.0,False,610.7
@@ -203,6 +201,8 @@ hard_00,hard,easyocr,frequencia,,50 Hz,False,1.0,0.0,False,610.7
 hard_00,hard,easyocr,grau_ip,,IP66,False,1.0,0.0,False,610.7
 hard_00,hard,easyocr,data_fab,,01/2018,False,1.0,0.0,False,610.7
 hard_00,hard,easyocr,cod_equipamento,,EQ-2018-3088,False,1.0,0.0,False,610.7
+hard_00,hard,multimodal_vision,num_serie,,SN-2018-29536,False,1.0,0.0,False,
+hard_00,hard,multimodal_vision,corrente,,28.4/16.4 A,False,1.0,0.0,False,
 hard_00,hard,tesseract,fabricante,,ABB Ltda,False,1.0,0.0,False,2062.6
 hard_00,hard,tesseract,modelo,,M2BAX 132,False,1.0,0.0,False,2062.6
 hard_00,hard,tesseract,num_serie,,SN-2018-29536,False,1.0,0.0,False,2062.6
@@ -213,10 +213,6 @@ hard_00,hard,tesseract,frequencia,,50 Hz,False,1.0,0.0,False,2062.6
 hard_00,hard,tesseract,grau_ip,,IP66,False,1.0,0.0,False,2062.6
 hard_00,hard,tesseract,data_fab,,01/2018,False,1.0,0.0,False,2062.6
 hard_00,hard,tesseract,cod_equipamento,,EQ-2018-3088,False,1.0,0.0,False,2062.6
-hard_01,hard,claude_vision,num_serie,,SN-2023-39831,False,1.0,0.0,False,
-hard_01,hard,claude_vision,frequencia,,60 Hz,False,1.0,0.0,False,
-hard_01,hard,claude_vision,data_fab,,08/2023,False,1.0,0.0,False,
-hard_01,hard,claude_vision,cod_equipamento,,EQ-2023-5564,False,1.0,0.0,False,
 hard_01,hard,easyocr,fabricante,,Voith Turbo,False,1.0,0.0,False,613.5
 hard_01,hard,easyocr,modelo,,IE3 200L,False,1.0,0.0,False,613.5
 hard_01,hard,easyocr,num_serie,,SN-2023-39831,False,1.0,0.0,False,613.5
@@ -227,6 +223,10 @@ hard_01,hard,easyocr,frequencia,,60 Hz,False,1.0,0.0,False,613.5
 hard_01,hard,easyocr,grau_ip,,IP65,False,1.0,0.0,False,613.5
 hard_01,hard,easyocr,data_fab,,08/2023,False,1.0,0.0,False,613.5
 hard_01,hard,easyocr,cod_equipamento,,EQ-2023-5564,False,1.0,0.0,False,613.5
+hard_01,hard,multimodal_vision,num_serie,,SN-2023-39831,False,1.0,0.0,False,
+hard_01,hard,multimodal_vision,frequencia,,60 Hz,False,1.0,0.0,False,
+hard_01,hard,multimodal_vision,data_fab,,08/2023,False,1.0,0.0,False,
+hard_01,hard,multimodal_vision,cod_equipamento,,EQ-2023-5564,False,1.0,0.0,False,
 hard_01,hard,tesseract,fabricante,,Voith Turbo,False,1.0,0.0,False,1798.8
 hard_01,hard,tesseract,modelo,,IE3 200L,False,1.0,0.0,False,1798.8
 hard_01,hard,tesseract,num_serie,,SN-2023-39831,False,1.0,0.0,False,1798.8
@@ -237,11 +237,6 @@ hard_01,hard,tesseract,frequencia,,60 Hz,False,1.0,0.0,False,1798.8
 hard_01,hard,tesseract,grau_ip,,IP65,False,1.0,0.0,False,1798.8
 hard_01,hard,tesseract,data_fab,,08/2023,False,1.0,0.0,False,1798.8
 hard_01,hard,tesseract,cod_equipamento,,EQ-2023-5564,False,1.0,0.0,False,1798.8
-hard_02,hard,claude_vision,modelo,,WG20 3F,False,1.0,0.0,False,
-hard_02,hard,claude_vision,num_serie,,SN-2020-66531,False,1.0,0.0,False,
-hard_02,hard,claude_vision,corrente,,12.8/7.4 A,False,1.0,0.0,False,
-hard_02,hard,claude_vision,potencia,,4 kW,False,1.0,0.0,False,
-hard_02,hard,claude_vision,data_fab,,12/2020,False,1.0,0.0,False,
 hard_02,hard,easyocr,fabricante,,Schneider Electric,False,1.0,0.0,False,725.6
 hard_02,hard,easyocr,modelo,,WG20 3F,False,1.0,0.0,False,725.6
 hard_02,hard,easyocr,num_serie,,SN-2020-66531,False,1.0,0.0,False,725.6
@@ -252,6 +247,11 @@ hard_02,hard,easyocr,frequencia,,50 Hz,False,1.0,0.0,False,725.6
 hard_02,hard,easyocr,grau_ip,,IP65,False,1.0,0.0,False,725.6
 hard_02,hard,easyocr,data_fab,,12/2020,False,1.0,0.0,False,725.6
 hard_02,hard,easyocr,cod_equipamento,,EQ-2020-9308,False,1.0,0.0,False,725.6
+hard_02,hard,multimodal_vision,modelo,,WG20 3F,False,1.0,0.0,False,
+hard_02,hard,multimodal_vision,num_serie,,SN-2020-66531,False,1.0,0.0,False,
+hard_02,hard,multimodal_vision,corrente,,12.8/7.4 A,False,1.0,0.0,False,
+hard_02,hard,multimodal_vision,potencia,,4 kW,False,1.0,0.0,False,
+hard_02,hard,multimodal_vision,data_fab,,12/2020,False,1.0,0.0,False,
 hard_02,hard,tesseract,fabricante,,Schneider Electric,False,1.0,0.0,False,1960.3
 hard_02,hard,tesseract,modelo,,WG20 3F,False,1.0,0.0,False,1960.3
 hard_02,hard,tesseract,num_serie,,SN-2020-66531,False,1.0,0.0,False,1960.3
@@ -262,15 +262,6 @@ hard_02,hard,tesseract,frequencia,,50 Hz,False,1.0,0.0,False,1960.3
 hard_02,hard,tesseract,grau_ip,,IP65,False,1.0,0.0,False,1960.3
 hard_02,hard,tesseract,data_fab,,12/2020,False,1.0,0.0,False,1960.3
 hard_02,hard,tesseract,cod_equipamento,,EQ-2020-9308,False,1.0,0.0,False,1960.3
-hard_03,hard,claude_vision,modelo,,M2BAX 132,False,1.0,0.0,False,
-hard_03,hard,claude_vision,num_serie,,SN-2022-47196,False,1.0,0.0,False,
-hard_03,hard,claude_vision,tensao,,208/360 V,False,1.0,0.0,False,
-hard_03,hard,claude_vision,corrente,,9.2/5.3 A,False,1.0,0.0,False,
-hard_03,hard,claude_vision,potencia,,4 kW,False,1.0,0.0,False,
-hard_03,hard,claude_vision,frequencia,,50 Hz,False,1.0,0.0,False,
-hard_03,hard,claude_vision,grau_ip,,IP55,False,1.0,0.0,False,
-hard_03,hard,claude_vision,data_fab,,12/2022,False,1.0,0.0,False,
-hard_03,hard,claude_vision,cod_equipamento,,EQ-2022-6085,False,1.0,0.0,False,
 hard_03,hard,easyocr,fabricante,,Siemens SA,False,1.0,0.0,False,614.8
 hard_03,hard,easyocr,modelo,,M2BAX 132,False,1.0,0.0,False,614.8
 hard_03,hard,easyocr,num_serie,,SN-2022-47196,False,1.0,0.0,False,614.8
@@ -281,6 +272,15 @@ hard_03,hard,easyocr,frequencia,,50 Hz,False,1.0,0.0,False,614.8
 hard_03,hard,easyocr,grau_ip,,IP55,False,1.0,0.0,False,614.8
 hard_03,hard,easyocr,data_fab,,12/2022,False,1.0,0.0,False,614.8
 hard_03,hard,easyocr,cod_equipamento,,EQ-2022-6085,False,1.0,0.0,False,614.8
+hard_03,hard,multimodal_vision,modelo,,M2BAX 132,False,1.0,0.0,False,
+hard_03,hard,multimodal_vision,num_serie,,SN-2022-47196,False,1.0,0.0,False,
+hard_03,hard,multimodal_vision,tensao,,208/360 V,False,1.0,0.0,False,
+hard_03,hard,multimodal_vision,corrente,,9.2/5.3 A,False,1.0,0.0,False,
+hard_03,hard,multimodal_vision,potencia,,4 kW,False,1.0,0.0,False,
+hard_03,hard,multimodal_vision,frequencia,,50 Hz,False,1.0,0.0,False,
+hard_03,hard,multimodal_vision,grau_ip,,IP55,False,1.0,0.0,False,
+hard_03,hard,multimodal_vision,data_fab,,12/2022,False,1.0,0.0,False,
+hard_03,hard,multimodal_vision,cod_equipamento,,EQ-2022-6085,False,1.0,0.0,False,
 hard_03,hard,tesseract,fabricante,,Siemens SA,False,1.0,0.0,False,2805.1
 hard_03,hard,tesseract,modelo,,M2BAX 132,False,1.0,0.0,False,2805.1
 hard_03,hard,tesseract,num_serie,,SN-2022-47196,False,1.0,0.0,False,2805.1
@@ -291,14 +291,6 @@ hard_03,hard,tesseract,frequencia,,50 Hz,False,1.0,0.0,False,2805.1
 hard_03,hard,tesseract,grau_ip,,IP55,False,1.0,0.0,False,2805.1
 hard_03,hard,tesseract,data_fab,,12/2022,False,1.0,0.0,False,2805.1
 hard_03,hard,tesseract,cod_equipamento,,EQ-2022-6085,False,1.0,0.0,False,2805.1
-hard_04,hard,claude_vision,modelo,,VPL-B0752F,False,1.0,0.0,False,
-hard_04,hard,claude_vision,num_serie,,SN-2012-88047,False,1.0,0.0,False,
-hard_04,hard,claude_vision,tensao,,440/760 V,False,1.0,0.0,False,
-hard_04,hard,claude_vision,corrente,,68.0/39.3 A,False,1.0,0.0,False,
-hard_04,hard,claude_vision,frequencia,,60 Hz,False,1.0,0.0,False,
-hard_04,hard,claude_vision,grau_ip,,IP55,False,1.0,0.0,False,
-hard_04,hard,claude_vision,data_fab,,08/2012,False,1.0,0.0,False,
-hard_04,hard,claude_vision,cod_equipamento,,EQ-2012-8777,False,1.0,0.0,False,
 hard_04,hard,easyocr,fabricante,,Parker Hannifin,False,1.0,0.0,False,613.9
 hard_04,hard,easyocr,modelo,,VPL-B0752F,False,1.0,0.0,False,613.9
 hard_04,hard,easyocr,num_serie,,SN-2012-88047,False,1.0,0.0,False,613.9
@@ -309,6 +301,14 @@ hard_04,hard,easyocr,frequencia,,60 Hz,False,1.0,0.0,False,613.9
 hard_04,hard,easyocr,grau_ip,,IP55,False,1.0,0.0,False,613.9
 hard_04,hard,easyocr,data_fab,,08/2012,False,1.0,0.0,False,613.9
 hard_04,hard,easyocr,cod_equipamento,,EQ-2012-8777,False,1.0,0.0,False,613.9
+hard_04,hard,multimodal_vision,modelo,,VPL-B0752F,False,1.0,0.0,False,
+hard_04,hard,multimodal_vision,num_serie,,SN-2012-88047,False,1.0,0.0,False,
+hard_04,hard,multimodal_vision,tensao,,440/760 V,False,1.0,0.0,False,
+hard_04,hard,multimodal_vision,corrente,,68.0/39.3 A,False,1.0,0.0,False,
+hard_04,hard,multimodal_vision,frequencia,,60 Hz,False,1.0,0.0,False,
+hard_04,hard,multimodal_vision,grau_ip,,IP55,False,1.0,0.0,False,
+hard_04,hard,multimodal_vision,data_fab,,08/2012,False,1.0,0.0,False,
+hard_04,hard,multimodal_vision,cod_equipamento,,EQ-2012-8777,False,1.0,0.0,False,
 hard_04,hard,tesseract,fabricante,,Parker Hannifin,False,1.0,0.0,False,1991.4
 hard_04,hard,tesseract,modelo,,VPL-B0752F,False,1.0,0.0,False,1991.4
 hard_04,hard,tesseract,num_serie,,SN-2012-88047,False,1.0,0.0,False,1991.4
@@ -319,16 +319,6 @@ hard_04,hard,tesseract,frequencia,,60 Hz,False,1.0,0.0,False,1991.4
 hard_04,hard,tesseract,grau_ip,,IP55,False,1.0,0.0,False,1991.4
 hard_04,hard,tesseract,data_fab,,08/2012,False,1.0,0.0,False,1991.4
 hard_04,hard,tesseract,cod_equipamento,,EQ-2012-8777,False,1.0,0.0,False,1991.4
-hard_05,hard,claude_vision,fabricante,,Siemens SA,False,1.0,0.0,False,
-hard_05,hard,claude_vision,modelo,,ALTIVAR 31,False,1.0,0.0,False,
-hard_05,hard,claude_vision,num_serie,,SN-2016-18418,False,1.0,0.0,False,
-hard_05,hard,claude_vision,tensao,,127/220 V,False,1.0,0.0,False,
-hard_05,hard,claude_vision,corrente,,68.0/39.3 A,False,1.0,0.0,False,
-hard_05,hard,claude_vision,potencia,,4 kW,False,1.0,0.0,False,
-hard_05,hard,claude_vision,frequencia,,60 Hz,False,1.0,0.0,False,
-hard_05,hard,claude_vision,grau_ip,,IP66,False,1.0,0.0,False,
-hard_05,hard,claude_vision,data_fab,,12/2016,False,1.0,0.0,False,
-hard_05,hard,claude_vision,cod_equipamento,,EQ-2016-2020,False,1.0,0.0,False,
 hard_05,hard,easyocr,fabricante,,Siemens SA,False,1.0,0.0,False,614.7
 hard_05,hard,easyocr,modelo,,ALTIVAR 31,False,1.0,0.0,False,614.7
 hard_05,hard,easyocr,num_serie,,SN-2016-18418,False,1.0,0.0,False,614.7
@@ -339,6 +329,16 @@ hard_05,hard,easyocr,frequencia,,60 Hz,False,1.0,0.0,False,614.7
 hard_05,hard,easyocr,grau_ip,,IP66,False,1.0,0.0,False,614.7
 hard_05,hard,easyocr,data_fab,,12/2016,False,1.0,0.0,False,614.7
 hard_05,hard,easyocr,cod_equipamento,,EQ-2016-2020,False,1.0,0.0,False,614.7
+hard_05,hard,multimodal_vision,fabricante,,Siemens SA,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,modelo,,ALTIVAR 31,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,num_serie,,SN-2016-18418,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,tensao,,127/220 V,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,corrente,,68.0/39.3 A,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,potencia,,4 kW,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,frequencia,,60 Hz,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,grau_ip,,IP66,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,data_fab,,12/2016,False,1.0,0.0,False,
+hard_05,hard,multimodal_vision,cod_equipamento,,EQ-2016-2020,False,1.0,0.0,False,
 hard_05,hard,tesseract,fabricante,,Siemens SA,False,1.0,0.0,False,2040.4
 hard_05,hard,tesseract,modelo,,ALTIVAR 31,False,1.0,0.0,False,2040.4
 hard_05,hard,tesseract,num_serie,,SN-2016-18418,False,1.0,0.0,False,2040.4
@@ -349,14 +349,6 @@ hard_05,hard,tesseract,frequencia,,60 Hz,False,1.0,0.0,False,2040.4
 hard_05,hard,tesseract,grau_ip,,IP66,False,1.0,0.0,False,2040.4
 hard_05,hard,tesseract,data_fab,,12/2016,False,1.0,0.0,False,2040.4
 hard_05,hard,tesseract,cod_equipamento,,EQ-2016-2020,False,1.0,0.0,False,2040.4
-hard_06,hard,claude_vision,modelo,,INDRAMAT,False,1.0,0.0,False,
-hard_06,hard,claude_vision,num_serie,,SN-2010-96900,False,1.0,0.0,False,
-hard_06,hard,claude_vision,tensao,,220/380 V,False,1.0,0.0,False,
-hard_06,hard,claude_vision,corrente,,28.4/16.4 A,False,1.0,0.0,False,
-hard_06,hard,claude_vision,potencia,,2.2 kW,False,1.0,0.0,False,
-hard_06,hard,claude_vision,frequencia,,50 Hz,False,1.0,0.0,False,
-hard_06,hard,claude_vision,data_fab,,07/2010,False,1.0,0.0,False,
-hard_06,hard,claude_vision,cod_equipamento,,EQ-2010-3977,False,1.0,0.0,False,
 hard_06,hard,easyocr,fabricante,,Bosch Rexroth,False,1.0,0.0,False,615.3
 hard_06,hard,easyocr,modelo,,INDRAMAT,False,1.0,0.0,False,615.3
 hard_06,hard,easyocr,num_serie,,SN-2010-96900,False,1.0,0.0,False,615.3
@@ -367,6 +359,14 @@ hard_06,hard,easyocr,frequencia,,50 Hz,False,1.0,0.0,False,615.3
 hard_06,hard,easyocr,grau_ip,,IP66,False,1.0,0.0,False,615.3
 hard_06,hard,easyocr,data_fab,,07/2010,False,1.0,0.0,False,615.3
 hard_06,hard,easyocr,cod_equipamento,,EQ-2010-3977,False,1.0,0.0,False,615.3
+hard_06,hard,multimodal_vision,modelo,,INDRAMAT,False,1.0,0.0,False,
+hard_06,hard,multimodal_vision,num_serie,,SN-2010-96900,False,1.0,0.0,False,
+hard_06,hard,multimodal_vision,tensao,,220/380 V,False,1.0,0.0,False,
+hard_06,hard,multimodal_vision,corrente,,28.4/16.4 A,False,1.0,0.0,False,
+hard_06,hard,multimodal_vision,potencia,,2.2 kW,False,1.0,0.0,False,
+hard_06,hard,multimodal_vision,frequencia,,50 Hz,False,1.0,0.0,False,
+hard_06,hard,multimodal_vision,data_fab,,07/2010,False,1.0,0.0,False,
+hard_06,hard,multimodal_vision,cod_equipamento,,EQ-2010-3977,False,1.0,0.0,False,
 hard_06,hard,tesseract,fabricante,,Bosch Rexroth,False,1.0,0.0,False,2279.4
 hard_06,hard,tesseract,modelo,,INDRAMAT,False,1.0,0.0,False,2279.4
 hard_06,hard,tesseract,num_serie,,SN-2010-96900,False,1.0,0.0,False,2279.4
@@ -377,15 +377,6 @@ hard_06,hard,tesseract,frequencia,,50 Hz,False,1.0,0.0,False,2279.4
 hard_06,hard,tesseract,grau_ip,,IP66,False,1.0,0.0,False,2279.4
 hard_06,hard,tesseract,data_fab,,07/2010,False,1.0,0.0,False,2279.4
 hard_06,hard,tesseract,cod_equipamento,,EQ-2010-3977,False,1.0,0.0,False,2279.4
-hard_07,hard,claude_vision,fabricante,Weg Motores,Danfoss Brasil,False,0.8571428571428571,0.1428571428571429,False,
-hard_07,hard,claude_vision,modelo,INDRAMAT,IE3 200L,False,0.875,0.125,False,
-hard_07,hard,claude_vision,num_serie,,SN-2019-58351,False,1.0,0.0,False,
-hard_07,hard,claude_vision,tensao,127/220 V,380/660 V,False,0.5555555555555556,0.4444444444444444,False,
-hard_07,hard,claude_vision,corrente,,9.2/5.3 A,False,1.0,0.0,False,
-hard_07,hard,claude_vision,potencia,2.2 kW,11 kW,False,0.6,0.4,False,
-hard_07,hard,claude_vision,frequencia,,50 Hz,False,1.0,0.0,False,
-hard_07,hard,claude_vision,data_fab,,04/2019,False,1.0,0.0,False,
-hard_07,hard,claude_vision,cod_equipamento,EQ-2021-5022,EQ-2019-2771,False,0.5,0.5,False,
 hard_07,hard,easyocr,fabricante,,Danfoss Brasil,False,1.0,0.0,False,649.5
 hard_07,hard,easyocr,modelo,,IE3 200L,False,1.0,0.0,False,649.5
 hard_07,hard,easyocr,num_serie,,SN-2019-58351,False,1.0,0.0,False,649.5
@@ -396,6 +387,15 @@ hard_07,hard,easyocr,frequencia,,50 Hz,False,1.0,0.0,False,649.5
 hard_07,hard,easyocr,grau_ip,,IP65,False,1.0,0.0,False,649.5
 hard_07,hard,easyocr,data_fab,,04/2019,False,1.0,0.0,False,649.5
 hard_07,hard,easyocr,cod_equipamento,,EQ-2019-2771,False,1.0,0.0,False,649.5
+hard_07,hard,multimodal_vision,fabricante,Weg Motores,Danfoss Brasil,False,0.8571428571428571,0.1428571428571429,False,
+hard_07,hard,multimodal_vision,modelo,INDRAMAT,IE3 200L,False,0.875,0.125,False,
+hard_07,hard,multimodal_vision,num_serie,,SN-2019-58351,False,1.0,0.0,False,
+hard_07,hard,multimodal_vision,tensao,127/220 V,380/660 V,False,0.5555555555555556,0.4444444444444444,False,
+hard_07,hard,multimodal_vision,corrente,,9.2/5.3 A,False,1.0,0.0,False,
+hard_07,hard,multimodal_vision,potencia,2.2 kW,11 kW,False,0.6,0.4,False,
+hard_07,hard,multimodal_vision,frequencia,,50 Hz,False,1.0,0.0,False,
+hard_07,hard,multimodal_vision,data_fab,,04/2019,False,1.0,0.0,False,
+hard_07,hard,multimodal_vision,cod_equipamento,EQ-2021-5022,EQ-2019-2771,False,0.5,0.5,False,
 hard_07,hard,tesseract,fabricante,,Danfoss Brasil,False,1.0,0.0,False,2413.3
 hard_07,hard,tesseract,modelo,,IE3 200L,False,1.0,0.0,False,2413.3
 hard_07,hard,tesseract,num_serie,,SN-2019-58351,False,1.0,0.0,False,2413.3
@@ -406,15 +406,6 @@ hard_07,hard,tesseract,frequencia,,50 Hz,False,1.0,0.0,False,2413.3
 hard_07,hard,tesseract,grau_ip,,IP65,False,1.0,0.0,False,2413.3
 hard_07,hard,tesseract,data_fab,,04/2019,False,1.0,0.0,False,2413.3
 hard_07,hard,tesseract,cod_equipamento,,EQ-2019-2771,False,1.0,0.0,False,2413.3
-hard_08,hard,claude_vision,fabricante,Danfoss Brasil,Weg Motores,False,1.0,0.0,False,
-hard_08,hard,claude_vision,modelo,,INDRAMAT,False,1.0,0.0,False,
-hard_08,hard,claude_vision,num_serie,,SN-2021-80539,False,1.0,0.0,False,
-hard_08,hard,claude_vision,tensao,220/380 V,127/220 V,False,0.4444444444444444,0.5555555555555556,False,
-hard_08,hard,claude_vision,corrente,12.8/7.4 A,68.0/39.3 A,False,0.5454545454545454,0.4545454545454546,False,
-hard_08,hard,claude_vision,potencia,,2.2 kW,False,1.0,0.0,False,
-hard_08,hard,claude_vision,grau_ip,IP55,IP65,False,0.25,0.75,False,
-hard_08,hard,claude_vision,data_fab,08/2021,09/2021,False,0.14285714285714285,0.8571428571428572,False,
-hard_08,hard,claude_vision,cod_equipamento,,EQ-2021-5022,False,1.0,0.0,False,
 hard_08,hard,easyocr,fabricante,,Weg Motores,False,1.0,0.0,False,690.2
 hard_08,hard,easyocr,modelo,,INDRAMAT,False,1.0,0.0,False,690.2
 hard_08,hard,easyocr,num_serie,,SN-2021-80539,False,1.0,0.0,False,690.2
@@ -425,6 +416,15 @@ hard_08,hard,easyocr,frequencia,,60 Hz,False,1.0,0.0,False,690.2
 hard_08,hard,easyocr,grau_ip,,IP65,False,1.0,0.0,False,690.2
 hard_08,hard,easyocr,data_fab,,09/2021,False,1.0,0.0,False,690.2
 hard_08,hard,easyocr,cod_equipamento,,EQ-2021-5022,False,1.0,0.0,False,690.2
+hard_08,hard,multimodal_vision,fabricante,Danfoss Brasil,Weg Motores,False,1.0,0.0,False,
+hard_08,hard,multimodal_vision,modelo,,INDRAMAT,False,1.0,0.0,False,
+hard_08,hard,multimodal_vision,num_serie,,SN-2021-80539,False,1.0,0.0,False,
+hard_08,hard,multimodal_vision,tensao,220/380 V,127/220 V,False,0.4444444444444444,0.5555555555555556,False,
+hard_08,hard,multimodal_vision,corrente,12.8/7.4 A,68.0/39.3 A,False,0.5454545454545454,0.4545454545454546,False,
+hard_08,hard,multimodal_vision,potencia,,2.2 kW,False,1.0,0.0,False,
+hard_08,hard,multimodal_vision,grau_ip,IP55,IP65,False,0.25,0.75,False,
+hard_08,hard,multimodal_vision,data_fab,08/2021,09/2021,False,0.14285714285714285,0.8571428571428572,False,
+hard_08,hard,multimodal_vision,cod_equipamento,,EQ-2021-5022,False,1.0,0.0,False,
 hard_08,hard,tesseract,fabricante,,Weg Motores,False,1.0,0.0,False,1908.2
 hard_08,hard,tesseract,modelo,,INDRAMAT,False,1.0,0.0,False,1908.2
 hard_08,hard,tesseract,num_serie,,SN-2021-80539,False,1.0,0.0,False,1908.2
@@ -435,8 +435,6 @@ hard_08,hard,tesseract,frequencia,,60 Hz,False,1.0,0.0,False,1908.2
 hard_08,hard,tesseract,grau_ip,,IP65,False,1.0,0.0,False,1908.2
 hard_08,hard,tesseract,data_fab,,09/2021,False,1.0,0.0,False,1908.2
 hard_08,hard,tesseract,cod_equipamento,,EQ-2021-5022,False,1.0,0.0,False,1908.2
-hard_09,hard,claude_vision,num_serie,,SN-2021-12260,False,1.0,0.0,False,
-hard_09,hard,claude_vision,cod_equipamento,,EQ-2021-6016,False,1.0,0.0,False,
 hard_09,hard,easyocr,fabricante,,Danfoss Brasil,False,1.0,0.0,False,662.8
 hard_09,hard,easyocr,modelo,,FC102-22kW,False,1.0,0.0,False,662.8
 hard_09,hard,easyocr,num_serie,,SN-2021-12260,False,1.0,0.0,False,662.8
@@ -447,6 +445,8 @@ hard_09,hard,easyocr,frequencia,,60 Hz,False,1.0,0.0,False,662.8
 hard_09,hard,easyocr,grau_ip,,IP55,False,1.0,0.0,False,662.8
 hard_09,hard,easyocr,data_fab,,08/2021,False,1.0,0.0,False,662.8
 hard_09,hard,easyocr,cod_equipamento,,EQ-2021-6016,False,1.0,0.0,False,662.8
+hard_09,hard,multimodal_vision,num_serie,,SN-2021-12260,False,1.0,0.0,False,
+hard_09,hard,multimodal_vision,cod_equipamento,,EQ-2021-6016,False,1.0,0.0,False,
 hard_09,hard,tesseract,modelo,,FC102-22kW,False,1.0,0.0,False,1759.6
 hard_09,hard,tesseract,num_serie,,SN-2021-12260,False,1.0,0.0,False,1759.6
 hard_09,hard,tesseract,tensao,,220/380 V,False,1.0,0.0,False,1759.6

@@ -85,7 +85,7 @@ python -c "
 import json, pandas as pd
 gt = pd.read_csv('data/ground_truth.csv').set_index('image_id')
 raw = {m: {r['image_id']: r for r in json.load(open(f'results/raw/{m}.json', encoding='utf-8'))}
-       for m in ['tesseract', 'easyocr', 'claude_vision']}
+       for m in ['tesseract', 'easyocr', 'multimodal_vision']}
 # gt.loc['easy_00'], raw['tesseract']['easy_00']['campos'], etc.
 "
 ```

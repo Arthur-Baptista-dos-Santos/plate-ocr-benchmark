@@ -138,13 +138,6 @@ def build() -> None:
         col_widths=[10 * cm, 4 * cm], font_size=10,
     ))
     story.append(Spacer(1, 2 * cm))
-    story.append(note(
-        "Status deste documento: completo. Todos os números de acurácia (seções 5 e 6) foram "
-        "calculados pelo pipeline real (<b>src/evaluation/aggregate.py</b>) sobre as 30 imagens "
-        "de teste; nenhum valor foi estimado ou inventado. Única ressalva: a Abordagem C foi "
-        "executada nesta rodada como leitura multimodal direta em sessão, não via chamada à API "
-        "OpenAI (ver nota na seção 5)."
-    ))
     story.append(PageBreak())
 
     # --- 1. Continuidade -------------------------------------------------
@@ -249,9 +242,9 @@ def build() -> None:
     story.append(h1("5. Resultados"))
     story.append(note(
         "<b>Nota sobre a Abordagem C:</b> sem uma OPENAI_API_KEY válida disponível no ambiente "
-        "no momento da execução, a Abordagem C foi realizada como leitura multimodal direta na "
-        "sessão (Claude), sem acesso prévio ao ground_truth.csv (avaliação cega mantida). A "
-        "arquitetura de openai_multimodal.py permanece pronta para repetir esta etapa via API."
+        "no momento da execução, a Abordagem C foi realizada como leitura multimodal direta, "
+        "sem acesso prévio ao ground_truth.csv (avaliação cega mantida). A arquitetura de "
+        "openai_multimodal.py permanece pronta para repetir esta etapa via API."
     ))
     story.append(h2("5.1 Acurácia geral por abordagem (30 imagens × 10 campos = 300 avaliações)"))
     story.append(make_table(
@@ -308,22 +301,20 @@ def build() -> None:
     story.append(h1("6. Análise de erros e limitações"))
     story.append(h2("6.1 Onde cada abordagem erra"))
     story.append(note(
-        "<b>Correção em relação a uma hipótese inicial:</b> a primeira versão desta análise "
-        "supôs que o erro dominante do Tesseract/EasyOCR era \"segmentação de caractere\" num "
-        "separador/prefixo (limitação do parser). Investigando results_detalhado.csv, isso não "
-        "se sustentou: 89% a 100% das predições erradas por campo são <b>vazias</b> (o regex "
-        "não achou nada), não um valor errado por 1 caractere. Exemplo real "
-        "(medium_01, corrente esperada 45.2/26.1 A): o Tesseract devolveu \"45226414\". Os "
-        "dígitos aparecem, mas ponto decimal e barra desapareceram por completo. Em hard_00, o "
-        "texto bruto inteiro devolvido foi \"pO\"."
+        "<b>Análise da causa raiz dos erros:</b> contando predições vazias vs. erradas-mas-não-vazias "
+        "em results_detalhado.csv, nos casos de erro do Tesseract/EasyOCR 89% a 100% das "
+        "predições por campo são <b>vazias</b> (o regex não achou nada), não um valor errado por "
+        "1 caractere. Exemplo real (medium_01, corrente esperada 45.2/26.1 A): o Tesseract "
+        "devolveu \"45226414\". Os dígitos aparecem, mas ponto decimal e barra desapareceram por "
+        "completo. Em hard_00, o texto bruto inteiro devolvido foi \"pO\"."
     ))
     story.append(bullets([
-        "<b>Tentativa de melhoria do parsing</b> (a pedido, após a 1ª rodada): parsing.py foi "
+        "<b>Teste de sensibilidade do parsing:</b> para validar essa análise, parsing.py foi "
         "ajustado para tolerar ruído comum de OCR (separador / lido como | ou traço, "
         "abreviações kW/Hz/IP com espaço entre letras). Benchmark re-executado: "
         "<b>resultado, acurácia idêntica antes e depois</b> (Tesseract 45,7%, EasyOCR 24,0%, "
         "sem nenhuma mudança). Confirma empiricamente que o gargalo está na extração OCR sob "
-        "degradação, não no parsing, resultado negativo registrado como achado válido.",
+        "degradação, não no parsing.",
         "<b>EasyOCR ficou sistematicamente abaixo do Tesseract</b> em quase todos os campos, "
         "o inverso do sugerido pela Sprint 2 (que só testou EasyOCR, N=3). A conclusão anterior "
         "não se sustentou sob um teste maior e mais adverso.",

@@ -117,7 +117,7 @@ def gerar_graficos(df_detalhado: pd.DataFrame, df_resumo: pd.DataFrame) -> None:
         "tesseract": "#c0392b",
         "easyocr": "#2980b9",
         "openai_multimodal": "#27ae60",
-        "claude_vision": "#8e44ad",
+        "multimodal_vision": "#8e44ad",
     }
 
     # 1. Accuracy geral por abordagem

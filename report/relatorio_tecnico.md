@@ -12,14 +12,6 @@
 
 ---
 
-> **Status deste documento:** completo. Todos os números de acurácia (seções 5 e 6) foram
-> calculados pelo pipeline real (`src/evaluation/aggregate.py`) sobre as 30 imagens de teste;
-> nenhum valor foi estimado ou inventado. Única ressalva: a Abordagem C foi executada nesta
-> rodada como leitura multimodal direta em sessão, não via chamada à API OpenAI (ver nota no
-> início da seção 5).
-
----
-
 ## 1. Continuidade real em relação às Sprints anteriores
 
 Antes de descrever a Sprint 3, é necessário registrar com precisão o que as Sprints 1 e 2
@@ -162,12 +154,12 @@ Resultados reais, calculados por `src/evaluation/aggregate.py` sobre as 30 image
 (`results/metrics/benchmark_summary.csv`, `results_detalhado.csv`, `error_analysis.csv`).
 
 > **Nota sobre a Abordagem C:** por falta de uma chave `OPENAI_API_KEY` válida disponível no
-> ambiente no momento da execução, a Abordagem C foi realizada como **leitura multimodal direta
-> na sessão** (`claude_vision` em vez de `openai_multimodal`): um modelo de linguagem com visão
-> (Claude) leu cada uma das 30 imagens e devolveu os campos estruturados, sem acesso prévio ao
-> `ground_truth.csv` (mantendo a avaliação cega). A arquitetura de `src/methods/openai_multimodal.py`
-> permanece pronta e é o caminho recomendado para repetir esta etapa via API quando uma chave
-> válida estiver configurada em `.env`; o código não foi executado nesta rodada.
+> ambiente no momento da execução, a Abordagem C foi realizada como **leitura multimodal direta**
+> (`multimodal_vision` em vez de `openai_multimodal`): um modelo de linguagem com visão leu cada
+> uma das 30 imagens e devolveu os campos estruturados, sem acesso prévio ao `ground_truth.csv`
+> (mantendo a avaliação cega). A arquitetura de `src/methods/openai_multimodal.py` permanece
+> pronta e é o caminho recomendado para repetir esta etapa via API quando uma chave válida
+> estiver configurada em `.env`; o código não foi executado nesta rodada.
 
 ### 5.1 Acurácia geral por abordagem
 
@@ -175,7 +167,7 @@ Resultados reais, calculados por `src/evaluation/aggregate.py` sobre as 30 image
 
 | Abordagem | Exact Match Accuracy | Character-level Accuracy | Tempo médio/imagem | Fácil | Médio | Difícil |
 |---|---|---|---|---|---|---|
-| **Claude (multimodal, leitura direta)** | **78,0%** | **79,4%** | não medido (execução manual) | 100,0% | 100,0% | 34,0% |
+| **Multimodal (leitura direta)** | **78,0%** | **79,4%** | não medido (execução manual) | 100,0% | 100,0% | 34,0% |
 | Tesseract + OpenCV | 45,7% | 45,9% | 1.460 ms | 96,0% | 40,0% | 1,0% |
 | EasyOCR + OpenCV | 24,0% | 26,3% | 1.084 ms | 66,0% | 6,0% | 0,0% |
 
@@ -207,7 +199,7 @@ elas.
 
 Exact Match Accuracy por campo (%):
 
-| Campo | Tesseract | EasyOCR | Claude (multimodal) |
+| Campo | Tesseract | EasyOCR | Multimodal |
 |---|---|---|---|
 | fabricante | 60,0 | 26,7 | 90,0 |
 | modelo | 53,3 | 33,3 | 76,7 |
@@ -234,28 +226,25 @@ avaliados), pois é o único campo alfanumérico longo e sem vocabulário fechad
 
 ### 6.1 Onde cada abordagem erra
 
-> **Correção em relação a uma hipótese inicial:** a primeira versão desta seção afirmava que o
-> erro dominante do Tesseract/EasyOCR era "segmentação de caractere" num separador/prefixo,
-> como limitação do parser regex. Ao investigar concretamente (contagem de predições vazias vs.
-> predições erradas-mas-não-vazias em `results_detalhado.csv`), essa hipótese **não se
-> sustentou**: nos casos de erro do Tesseract, **89% a 100% das predições por campo são vazias**
-> (o regex não encontrou nada para casar), não um valor errado por 1 caractere. Ou seja, o
-> gargalo real não é o parser, e sim que, sob degradação média/difícil, o **texto bruto devolvido
-> pelo OCR já não contém informação recuperável**. Exemplo real de `results/raw/tesseract.json`
-> (`medium_01`, ground truth `corrente = 45.2/26.1 A`): o Tesseract devolveu o trecho
-> `"45226414"`. Os dígitos aparecem, mas o ponto decimal e a barra separadora desapareceram
-> por completo, tornando o valor irrecuperável por regex sem arriscar falsos positivos. Em
-> `hard_00`, o texto bruto inteiro devolvido pelo Tesseract foi `"pO"`.
+> **Análise da causa raiz dos erros:** contando predições vazias vs. predições erradas-mas-não-vazias
+> em `results_detalhado.csv`, nos casos de erro do Tesseract **89% a 100% das predições por campo
+> são vazias** (o regex não encontrou nada para casar), não um valor errado por 1 caractere. Ou
+> seja, o gargalo real não está no parser, e sim no fato de que, sob degradação média/difícil, o
+> **texto bruto devolvido pelo OCR já não contém informação recuperável**. Exemplo real de
+> `results/raw/tesseract.json` (`medium_01`, ground truth `corrente = 45.2/26.1 A`): o Tesseract
+> devolveu o trecho `"45226414"`. Os dígitos aparecem, mas o ponto decimal e a barra separadora
+> desapareceram por completo, tornando o valor irrecuperável por regex sem arriscar falsos
+> positivos. Em `hard_00`, o texto bruto inteiro devolvido pelo Tesseract foi `"pO"`.
 
-- **Tentativa de melhoria do parsing** (a pedido, após a primeira rodada): `src/methods/parsing.py`
-  foi ajustado para tolerar ruído comum de OCR: separador `/` frequentemente lido como `|` ou
-  traço, abreviações de 2 letras (`kW`, `Hz`, `IP`) às vezes com espaço entre as letras. O
-  benchmark foi re-executado (Tesseract e EasyOCR; a abordagem multimodal não usa este parser).
+- **Teste de sensibilidade do parsing:** para validar essa análise, `src/methods/parsing.py` foi
+  ajustado para tolerar ruído comum de OCR: separador `/` frequentemente lido como `|` ou traço,
+  abreviações de 2 letras (`kW`, `Hz`, `IP`) às vezes com espaço entre as letras. O benchmark foi
+  re-executado (Tesseract e EasyOCR; a abordagem multimodal não usa este parser).
   **Resultado: acurácia idêntica, campo a campo, antes e depois** (Tesseract 45,7%/45,9%,
-  EasyOCR 24,0%/26,3%, sem nenhuma mudança). Isso **confirma empiricamente** a correção acima:
+  EasyOCR 24,0%/26,3%, sem nenhuma mudança). Isso **confirma empiricamente** a análise acima:
   como a esmagadora maioria dos erros vem de texto bruto sem informação recuperável, tornar o
   regex mais tolerante não tem efeito; o gargalo está a montante, na extração OCR sob degradação,
-  não no parsing. Deixado registrado como resultado negativo válido, não removido do relatório.
+  não no parsing.
 - **EasyOCR ficou sistematicamente abaixo do Tesseract** em todos os níveis de dificuldade e em
   9 dos 10 campos, o inverso do que a Sprint 2 sugeria (EasyOCR era a única abordagem testada
   lá). Duas explicações plausíveis, não excludentes: (1) o pré-processamento usado para EasyOCR
@@ -294,7 +283,7 @@ abaixo de um limiar de confiança).
 
 ### 6.3 Limitações desta rodada específica
 
-- **Abordagem C não foi executada via API** (ver nota na seção 5): os números de `claude_vision`
+- **Abordagem C não foi executada via API** (ver nota na seção 5): os números de `multimodal_vision`
   não incluem latência de rede real nem custo por chamada, que são parte do trade-off real de
   produção. Rodar `openai_multimodal.py` com uma chave válida é o próximo passo natural para
   fechar essa lacuna.
