@@ -51,7 +51,7 @@ Detalhe completo, metodologia e análise de erro no relatório técnico:
 |---|---|---|
 | 1 | Protótipo atualizado, capaz de ler placa/extrair dados visuais em exemplos de teste | [`src/`](src/) (código) rodado sobre as 30 imagens em [`data/test/`](data/test/) |
 | 2 | Relatório técnico (abordagens, ferramentas/modelos, dados de entrada, montagem do conjunto de 30 imagens, cálculo de acurácia) | [`report/relatorio_tecnico.pdf`](report/relatorio_tecnico.pdf) |
-| 3 | Evidências de execução (imagens, prints, exemplos de saída) | [`evidencias/`](evidencias/) (comparação lado a lado por dificuldade) + [`results/visualizations/`](results/visualizations/) (gráficos) |
+| 3 | Evidências de execução (imagens, prints, exemplos de saída) | [`evidencias/`](evidencias/) (comparação lado a lado por dificuldade) + [`results/visualizations/`](results/visualizations/)|
 | 4 | Apresentação resumida (evolução vs. etapa anterior, testes, acurácia, próximos passos) | [`presentation/apresentacao_sprint3.md`](presentation/apresentacao_sprint3.md) e Apêndice A do [relatório em PDF](report/relatorio_tecnico.pdf) |
 
 ---
@@ -76,22 +76,6 @@ src/
     ├── config.py               caminhos e parametros centralizados
     └── io_utils.py             leitura/escrita de imagem segura p/ paths Unicode no Windows
 ```
-
----
-
-## `Metodologia`
-
-- **Ground Truth cego**: gravado a partir dos parâmetros usados para desenhar cada placa,
-  nunca a partir da saída de um modelo
-- **Mesmo parser para A e B**: Tesseract e EasyOCR passam pelo mesmo extrator de campos
-  (regex + fuzzy match), isolando a variável "qualidade do OCR" entre as duas abordagens
-- **Duas métricas, não misturadas**: Exact Match Accuracy (um caractere errado invalida o
-  campo, refletindo o problema real) e Character-level Accuracy via distância de Levenshtein
-  (mede o quão perto chegou mesmo quando erra)
-- **3 níveis de dificuldade**: iluminação (normal/sombra/reflexo/sub-superexposta),
-  desgaste/sujeira (de limpa a severa, com óleo), ângulo de câmera (0° a 40°) e resolução
-
----
 
 ## `Estrutura`
 
@@ -147,7 +131,7 @@ pytest -q                                         # 17 testes unitarios (metrica
 |--------|------|------|
 | Sprint 1 | Cadastro e visualizacao de ativos | [`motor-sync`](https://github.com/Arthur-Baptista-dos-Santos/motor-sync) |
 | Sprint 2 | Digital Twin: RPA + sensores + pipeline OCR | [`digital-twin-assets`](https://github.com/Arthur-Baptista-dos-Santos/digital-twin-assets) |
-| Sprint 3 (este) | Benchmark de 3 abordagens de leitura de placas | `plate-ocr-benchmark` |
+| Sprint 3 | Benchmark de 3 abordagens de leitura de placas | `plate-ocr-benchmark` |
 
 ---
 
