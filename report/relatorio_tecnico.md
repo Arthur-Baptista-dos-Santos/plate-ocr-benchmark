@@ -353,3 +353,66 @@ SPRINT 3/
 ├── presentation/                   # slides resumo da Sprint
 └── tests/                          # testes unitários (pytest)
 ```
+
+---
+
+## Apêndice A: Apresentação Resumida da Sprint
+
+Resumo executivo da Sprint 3, na mesma estrutura da apresentação distribuída em
+`presentation/apresentacao_sprint3.md`: evolução em relação à etapa anterior, testes realizados,
+acurácia alcançada e próximos passos.
+
+### A.1 De onde viemos
+
+- **Sprint 1 (FORZY):** YOLOv8 (detecção) + Tesseract/TrOCR (leitura), 180 imagens de teste.
+  Detecção 100%, score OCR médio 43,9%, **acurácia global 0,0%**: a leitura de campos, não a
+  detecção, é o gargalo real.
+- **Sprint 2 (Digital Twin):** EasyOCR isolado, 3 placas (normal/ruído/inclinada), ~87%/~62%/~50%,
+  mas avaliação manual, N=3, sem métrica formal.
+
+### A.2 O que muda nesta Sprint
+
+- Escopo controlado: só leitura/extração de campos (sem retomar detecção, pois os pesos do YOLO
+  não foram persistidos).
+- 3 abordagens sob o mesmo protocolo: Tesseract, EasyOCR, modelo multimodal com visão.
+- 30 imagens de teste (10 fácil / 10 médio / 10 difícil), gabarito gravado antes do OCR.
+- Métricas formais: Exact Match Accuracy e Character-level Accuracy (CER).
+
+### A.3 Resultados: acurácia geral
+
+30 imagens × 10 campos = 300 avaliações por abordagem. 0% de falha de execução em todas as
+abordagens: toda diferença é acurácia de leitura.
+
+| Abordagem | Exact Match | Character-level | Fácil | Médio | Difícil |
+|---|---|---|---|---|---|
+| Multimodal (visão) | 78,0% | 79,4% | 100% | 100% | 34% |
+| Tesseract | 45,7% | 45,9% | 96% | 40% | 1% |
+| EasyOCR | 24,0% | 26,3% | 66% | 6% | 0% |
+
+### A.4 Multimodal vs. OCR clássico: o que observamos
+
+- Multimodal vence claramente nos níveis fácil/médio (100%/100% contra até 40% do OCR clássico)
+  e ainda lidera no difícil (34% contra até 1%), mas degrada bastante lá também: nenhuma
+  abordagem está pronta para produção sem um limiar de confiança.
+- Quando erra em condição extrema, o multimodal tende a devolver campo vazio (admite que não
+  leu) em vez de um valor errado, o que é mais seguro para popular um banco de ativos.
+- EasyOCR ficou sistematicamente atrás do Tesseract nesta rodada, o que contradiz a conclusão da
+  Sprint 2 (só EasyOCR havia sido testado lá, com N=3).
+- Trade-off ainda em aberto: a Abordagem C rodou como leitura direta em sessão, não via API;
+  custo e latência reais de API ficam como próximo passo.
+
+### A.5 Tentativa de melhoria do parsing (resultado negativo, mas real)
+
+- Hipótese inicial: o erro do OCR clássico era 1 caractere errado no separador; o regex foi
+  tornado mais tolerante.
+- Investigação em `results_detalhado.csv`: 89% a 100% dos erros por campo são predições vazias,
+  não valores errados; o regex nunca chegou a rodar sobre texto útil.
+- Regex melhorado e benchmark re-executado: acurácia idêntica antes e depois (45,7% / 24,0%).
+- Conclusão: o gargalo é a extração OCR sob degradação, não o parsing.
+
+### A.6 Limitações e próximos passos
+
+- Sem pipeline ponta a ponta (falta retomar a detecção da placa na cena).
+- Dataset ainda sintético: próximo passo é um piloto com fotos reais.
+- Parsing regex/fuzzy não generaliza a layouts fora do vocabulário conhecido.
+- Medir custo real de API em escala antes de decidir produção.

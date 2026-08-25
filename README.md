@@ -45,6 +45,17 @@ Detalhe completo, metodologia e análise de erro no relatório técnico:
 
 ---
 
+## `Entregáveis da Sprint 3`
+
+| # | Item pedido | Onde está |
+|---|---|---|
+| 1 | Protótipo atualizado, capaz de ler placa/extrair dados visuais em exemplos de teste | [`src/`](src/) (código) rodado sobre as 30 imagens em [`data/test/`](data/test/) |
+| 2 | Relatório técnico (abordagens, ferramentas/modelos, dados de entrada, montagem do conjunto de 30 imagens, cálculo de acurácia) | [`report/relatorio_tecnico.pdf`](report/relatorio_tecnico.pdf) |
+| 3 | Evidências de execução (imagens, prints, exemplos de saída) | [`evidencias/`](evidencias/) (comparação lado a lado por dificuldade) + [`results/visualizations/`](results/visualizations/) (gráficos) |
+| 4 | Apresentação resumida (evolução vs. etapa anterior, testes, acurácia, próximos passos) | [`presentation/apresentacao_sprint3.md`](presentation/apresentacao_sprint3.md) e Apêndice A do [relatório em PDF](report/relatorio_tecnico.pdf) |
+
+---
+
 ## `Arquitetura`
 
 ```
