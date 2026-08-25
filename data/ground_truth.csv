@@ -1,0 +1,31 @@
+image_id,image_path,difficulty,fabricante,modelo,num_serie,tensao,corrente,potencia,frequencia,grau_ip,data_fab,cod_equipamento,cfg_iluminacao,cfg_desgaste,cfg_sujeira,cfg_angulo,cfg_resolucao
+easy_00,data\test\easy\easy_00.png,easy,WEG Equipamentos,IE3 200L,SN-2020-42098,380/660 V,45.2/26.1 A,11 kW,50 Hz,IP44,02/2020,EQ-2020-7912,normal,nenhum,limpa,0,alta
+easy_01,data\test\easy\easy_01.png,easy,Parker Hannifin,ALTIVAR 31,SN-2019-95181,208/360 V,68.0/39.3 A,22 kW,60 Hz,IP44,01/2019,EQ-2019-5557,normal,nenhum,limpa,0,alta
+easy_02,data\test\easy\easy_02.png,easy,ABB Ltda,M2BAX 132,SN-2013-59797,220/380 V,12.8/7.4 A,4 kW,60 Hz,IP54,06/2013,EQ-2013-8527,normal,nenhum,limpa,0,alta
+easy_03,data\test\easy\easy_03.png,easy,ABB Ltda,W22 160M,SN-2013-96673,380/660 V,12.8/7.4 A,11 kW,50 Hz,IP54,12/2013,EQ-2013-7227,normal,nenhum,limpa,0,alta
+easy_04,data\test\easy\easy_04.png,easy,Weg Motores,M2BAX 132,SN-2013-89840,380/660 V,9.2/5.3 A,22 kW,50 Hz,IP66,11/2013,EQ-2013-7216,normal,nenhum,limpa,0,alta
+easy_05,data\test\easy\easy_05.png,easy,Grundfos,IE3 200L,SN-2022-18675,380/660 V,9.2/5.3 A,4 kW,50 Hz,IP66,06/2022,EQ-2022-7482,normal,nenhum,limpa,0,alta
+easy_06,data\test\easy\easy_06.png,easy,Bosch Rexroth,CM10-3,SN-2018-86484,127/220 V,12.8/7.4 A,22 kW,50 Hz,IP44,05/2018,EQ-2018-9085,normal,nenhum,limpa,0,alta
+easy_07,data\test\easy\easy_07.png,easy,Grundfos,CM10-3,SN-2019-88104,127/220 V,9.2/5.3 A,37 kW,50 Hz,IP54,02/2019,EQ-2019-9797,normal,nenhum,limpa,0,alta
+easy_08,data\test\easy\easy_08.png,easy,Weg Motores,VPL-B0752F,SN-2017-33416,208/360 V,28.4/16.4 A,37 kW,50 Hz,IP55,01/2017,EQ-2017-7126,normal,nenhum,limpa,0,alta
+easy_09,data\test\easy\easy_09.png,easy,Weg Motores,ALTIVAR 31,SN-2024-17592,380/660 V,9.2/5.3 A,11 kW,50 Hz,IP66,06/2024,EQ-2024-2133,normal,nenhum,limpa,0,alta
+medium_00,data\test\medium\medium_00.png,medium,Grundfos,ALTIVAR 31,SN-2023-80686,380/660 V,12.8/7.4 A,2.2 kW,60 Hz,IP66,10/2023,EQ-2023-9479,sombra,leve,limpa,-10,media
+medium_01,data\test\medium\medium_01.png,medium,WEG Equipamentos,M2BAX 132,SN-2019-92719,220/380 V,45.2/26.1 A,11 kW,50 Hz,IP65,04/2019,EQ-2019-2160,normal,leve,poeira,-10,media
+medium_02,data\test\medium\medium_02.png,medium,Grundfos,ALTIVAR 31,SN-2022-22363,220/380 V,68.0/39.3 A,4 kW,60 Hz,IP66,08/2022,EQ-2022-8651,normal,leve,limpa,-15,alta
+medium_03,data\test\medium\medium_03.png,medium,Parker Hannifin,FC102-22kW,SN-2013-28373,127/220 V,45.2/26.1 A,37 kW,60 Hz,IP55,04/2013,EQ-2013-2235,sombra,leve,limpa,18,media
+medium_04,data\test\medium\medium_04.png,medium,Danfoss Brasil,ALTIVAR 31,SN-2016-62565,220/380 V,45.2/26.1 A,2.2 kW,50 Hz,IP66,08/2016,EQ-2016-5345,sombra,leve,poeira,18,alta
+medium_05,data\test\medium\medium_05.png,medium,Parker Hannifin,W22 160M,SN-2010-51104,220/380 V,28.4/16.4 A,55 kW,50 Hz,IP54,10/2010,EQ-2010-9320,normal,leve,limpa,18,media
+medium_06,data\test\medium\medium_06.png,medium,Schneider Electric,INDRAMAT,SN-2011-87924,220/380 V,9.2/5.3 A,11 kW,60 Hz,IP44,10/2011,EQ-2011-9565,sombra,leve,limpa,15,media
+medium_07,data\test\medium\medium_07.png,medium,Weg Motores,FC102-22kW,SN-2020-51441,220/380 V,28.4/16.4 A,55 kW,50 Hz,IP54,11/2020,EQ-2020-9808,normal,leve,limpa,15,media
+medium_08,data\test\medium\medium_08.png,medium,Danfoss Brasil,VPL-B0752F,SN-2014-49651,208/360 V,9.2/5.3 A,7.5 kW,60 Hz,IP54,03/2014,EQ-2014-3200,sombra,leve,limpa,18,media
+medium_09,data\test\medium\medium_09.png,medium,Schneider Electric,IE3 200L,SN-2021-76244,127/220 V,12.8/7.4 A,7.5 kW,50 Hz,IP66,06/2021,EQ-2021-5533,normal,leve,poeira,-10,alta
+hard_00,data\test\hard\hard_00.png,hard,ABB Ltda,M2BAX 132,SN-2018-29536,208/360 V,28.4/16.4 A,4 kW,50 Hz,IP66,01/2018,EQ-2018-3088,reflexo,severo,oleo,25,media
+hard_01,data\test\hard\hard_01.png,hard,Voith Turbo,IE3 200L,SN-2023-39831,380/660 V,28.4/16.4 A,22 kW,60 Hz,IP65,08/2023,EQ-2023-5564,reflexo,severo,oleo,-40,media
+hard_02,data\test\hard\hard_02.png,hard,Schneider Electric,WG20 3F,SN-2020-66531,220/380 V,12.8/7.4 A,4 kW,50 Hz,IP65,12/2020,EQ-2020-9308,superexposta,severo,oleo,-30,media
+hard_03,data\test\hard\hard_03.png,hard,Siemens SA,M2BAX 132,SN-2022-47196,208/360 V,9.2/5.3 A,4 kW,50 Hz,IP55,12/2022,EQ-2022-6085,subexposta,moderado,poeira,25,baixa
+hard_04,data\test\hard\hard_04.png,hard,Parker Hannifin,VPL-B0752F,SN-2012-88047,440/760 V,68.0/39.3 A,2.2 kW,60 Hz,IP55,08/2012,EQ-2012-8777,sombra,severo,poeira,-40,media
+hard_05,data\test\hard\hard_05.png,hard,Siemens SA,ALTIVAR 31,SN-2016-18418,127/220 V,68.0/39.3 A,4 kW,60 Hz,IP66,12/2016,EQ-2016-2020,subexposta,severo,oleo,40,baixa
+hard_06,data\test\hard\hard_06.png,hard,Bosch Rexroth,INDRAMAT,SN-2010-96900,220/380 V,28.4/16.4 A,2.2 kW,50 Hz,IP66,07/2010,EQ-2010-3977,reflexo,severo,oleo,30,baixa
+hard_07,data\test\hard\hard_07.png,hard,Danfoss Brasil,IE3 200L,SN-2019-58351,380/660 V,9.2/5.3 A,11 kW,50 Hz,IP65,04/2019,EQ-2019-2771,reflexo,severo,oleo,-30,baixa
+hard_08,data\test\hard\hard_08.png,hard,Weg Motores,INDRAMAT,SN-2021-80539,127/220 V,68.0/39.3 A,2.2 kW,60 Hz,IP65,09/2021,EQ-2021-5022,reflexo,severo,oleo,-25,media
+hard_09,data\test\hard\hard_09.png,hard,Danfoss Brasil,FC102-22kW,SN-2021-12260,220/380 V,12.8/7.4 A,22 kW,60 Hz,IP55,08/2021,EQ-2021-6016,superexposta,severo,oleo,-30,media

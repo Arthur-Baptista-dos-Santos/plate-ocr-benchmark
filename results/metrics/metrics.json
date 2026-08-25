@@ -1,0 +1,44 @@
+[
+  {
+    "metodo": "claude_vision",
+    "n_imagens": 30,
+    "n_campos_avaliados": 300,
+    "acertos_exatos": 234,
+    "erros_exatos": 66,
+    "exact_match_accuracy_pct": 78.0,
+    "character_level_accuracy_pct": 79.4,
+    "tempo_medio_ms": null,
+    "taxa_falha_execucao_pct": 0.0,
+    "accuracy_easy_pct": 100.0,
+    "accuracy_medium_pct": 100.0,
+    "accuracy_hard_pct": 34.0
+  },
+  {
+    "metodo": "tesseract",
+    "n_imagens": 30,
+    "n_campos_avaliados": 300,
+    "acertos_exatos": 137,
+    "erros_exatos": 163,
+    "exact_match_accuracy_pct": 45.7,
+    "character_level_accuracy_pct": 45.9,
+    "tempo_medio_ms": 1460.1,
+    "taxa_falha_execucao_pct": 0.0,
+    "accuracy_easy_pct": 96.0,
+    "accuracy_medium_pct": 40.0,
+    "accuracy_hard_pct": 1.0
+  },
+  {
+    "metodo": "easyocr",
+    "n_imagens": 30,
+    "n_campos_avaliados": 300,
+    "acertos_exatos": 72,
+    "erros_exatos": 228,
+    "exact_match_accuracy_pct": 24.0,
+    "character_level_accuracy_pct": 26.3,
+    "tempo_medio_ms": 1084.0,
+    "taxa_falha_execucao_pct": 0.0,
+    "accuracy_easy_pct": 66.0,
+    "accuracy_medium_pct": 6.0,
+    "accuracy_hard_pct": 0.0
+  }
+]
