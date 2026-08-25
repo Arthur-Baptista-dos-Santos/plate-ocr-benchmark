@@ -114,10 +114,10 @@ def calcular_resumo(df_detalhado: pd.DataFrame) -> pd.DataFrame:
 def gerar_graficos(df_detalhado: pd.DataFrame, df_resumo: pd.DataFrame) -> None:
     VIS_DIR.mkdir(parents=True, exist_ok=True)
     cores = {
-        "tesseract": "#c0392b",
-        "easyocr": "#2980b9",
-        "openai_multimodal": "#27ae60",
-        "multimodal_vision": "#8e44ad",
+        "tesseract": "#595959",
+        "easyocr": "#a6a6a6",
+        "openai_multimodal": "#404040",
+        "multimodal_vision": "#1a1a1a",
     }
 
     # 1. Accuracy geral por abordagem
