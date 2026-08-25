@@ -101,8 +101,7 @@ plate-ocr-benchmark/
 │   └── build_pdf.py                  gera o PDF a partir do .md (reportlab)
 ├── presentation/                     apresentacao resumida da Sprint
 ├── tests/                            testes unitarios (pytest)
-├── requirements.txt
-└── .env.example                      OPENAI_API_KEY (nunca commitar .env real)
+└── requirements.txt
 ```
 
 ---
