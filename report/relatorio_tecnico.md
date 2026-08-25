@@ -1,5 +1,8 @@
-# SPRINT 3 — Evolução do Protótipo de Leitura de Placas
-## Digital Twin de Ativos Industriais — Disciplina: Visão Computacional
+# SPRINT 3: Evolução do Protótipo de Leitura de Placas
+## Digital Twin de Ativos Industriais
+## Disciplina: Visão Computacional
+
+
 
 | Nome | RM |
 |---|---|
@@ -9,19 +12,20 @@
 
 ---
 
-> **Status deste documento:** metodologia, dataset e arquitetura estão fechados. A seção 5
-> (Resultados) está com placeholders `[[PENDENTE]]` até a execução real do benchmark — nenhum
-> número de acurácia é reportado sem ter sido calculado pelo pipeline (`src/evaluation/aggregate.py`)
-> sobre as 30 imagens reais. Isso é deliberado: ver seção 1.
+> **Status deste documento:** completo. Todos os números de acurácia (seções 5 e 6) foram
+> calculados pelo pipeline real (`src/evaluation/aggregate.py`) sobre as 30 imagens de teste —
+> nenhum valor foi estimado ou inventado. Única ressalva: a Abordagem C foi executada nesta
+> rodada como leitura multimodal direta em sessão, não via chamada à API OpenAI (ver nota no
+> início da seção 5).
 
 ---
 
 ## 1. Continuidade real em relação às Sprints anteriores
 
 Antes de descrever a Sprint 3, é necessário registrar com precisão o que as Sprints 1 e 2
-efetivamente mostraram — porque a Sprint 3 herda diretamente essas limitações.
+efetivamente mostraram, porque a Sprint 3 herda diretamente essas limitações.
 
-### Sprint 1 (FORZY) — o que o notebook realmente produziu
+### Sprint 1 (FORZY): o que o notebook realmente produziu
 
 O relatório da Sprint 1 descreve um pipeline YOLOv8 (detecção) + Tesseract/TrOCR (OCR) treinado
 sobre um dataset sintético de 1.200 imagens. A execução real do notebook

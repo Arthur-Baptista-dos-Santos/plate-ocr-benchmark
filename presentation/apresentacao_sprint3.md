@@ -1,8 +1,7 @@
 <!--
 Apresentação resumida — Sprint 3 (Visão Computacional)
-Um slide por seção "---". Números marcados [[PENDENTE]] só devem ser
-preenchidos com valores reais de results/metrics/benchmark_summary.csv —
-nunca estimados ou inventados.
+Um slide por seção "---". Todos os números abaixo são reais, calculados por
+src/evaluation/aggregate.py sobre as 30 imagens de teste.
 -->
 
 # Sprint 3 — Leitura de Placas de Ativos Industriais
