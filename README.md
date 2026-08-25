@@ -39,7 +39,9 @@ sob um experimento controlado e reprodutível:
 | Tesseract + OpenCV | 45,7% | 96% | 40% | 1% |
 | EasyOCR + OpenCV | 24,0% | 66% | 6% | 0% |
 
-Detalhe completo, metodologia e análise de erro em [`report/relatorio_tecnico.md`](report/relatorio_tecnico.md).
+Detalhe completo, metodologia e análise de erro no relatório técnico:
+[`relatorio_tecnico.pdf`](report/relatorio_tecnico.pdf) (versão final) ou
+[`relatorio_tecnico.md`](report/relatorio_tecnico.md) (fonte, editável).
 
 ---
 
@@ -93,7 +95,10 @@ plate-ocr-benchmark/
 │   ├── metrics/                      CSVs de metricas e analise de erro
 │   └── visualizations/               4 graficos comparativos (PNG)
 ├── evidencias/                       exemplos lado a lado por dificuldade + README
-├── report/relatorio_tecnico.md       relatorio tecnico completo
+├── report/
+│   ├── relatorio_tecnico.pdf         relatorio tecnico completo (versao final)
+│   ├── relatorio_tecnico.md          fonte editavel do relatorio
+│   └── build_pdf.py                  gera o PDF a partir do .md (reportlab)
 ├── presentation/                     apresentacao resumida da Sprint
 ├── tests/                            testes unitarios (pytest)
 ├── requirements.txt

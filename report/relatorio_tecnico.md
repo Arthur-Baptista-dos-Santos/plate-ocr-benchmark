@@ -47,7 +47,7 @@ corretamente no lote de teste. Essa é a lacuna real que a Sprint 3 precisa atac
 que o escopo desta Sprint isola deliberadamente a variável "leitura", sem reintroduzir a etapa
 de detecção (ver seção 2).
 
-### Sprint 2 (Digital Twin) — o que foi medido
+### Sprint 2 (Digital Twin): o que foi medido
 
 A Sprint 2 testou apenas **EasyOCR**, sobre **3 imagens** sintéticas (uma por ativo:
 MTR-001 condição normal, MTR-002 com ruído, MTR-003 inclinada 5°), com avaliação manual
